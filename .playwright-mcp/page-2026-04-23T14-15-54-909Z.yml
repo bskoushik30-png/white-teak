@@ -1,0 +1,271 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 
+      - text: "New Feature:"
+    - text: You can now create a
+    - link "gradient out of 3 colors!" [ref=e7] [cursor=pointer]:
+      - /url: /gradient3.php
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - link "color space logo ColorSpace Beta" [ref=e12] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e13]:
+            - img "color space logo" [ref=e14]
+            - generic [ref=e15]: ColorSpace Beta
+        - navigation [ref=e16]:
+          - list [ref=e17]:
+            - listitem [ref=e18]:
+              - link "Palettes" [ref=e19] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e20]:
+              - link "Gradient" [ref=e21] [cursor=pointer]:
+                - /url: /gradient.php
+            - listitem [ref=e22]:
+              - link "3-Color-Gradient" [ref=e23] [cursor=pointer]:
+                - /url: /gradient3.php
+              - text: New
+            - listitem [ref=e24]:
+              - link "Contact" [ref=e25] [cursor=pointer]:
+                - /url: /contact.php
+            - listitem [ref=e26]:
+              - link "Info" [ref=e27] [cursor=pointer]:
+                - /url: /info.php
+            - listitem [ref=e28]:
+              - link "color space twitter" [ref=e29] [cursor=pointer]:
+                - /url: https://twitter.com/MyColorSpaces
+                - generic [ref=e30]: 
+      - heading "Never waste Hours on finding the perfect Color Palette again!" [level=1] [ref=e31]
+      - generic [ref=e33]:
+        - heading "Just Enter a Color!" [level=2] [ref=e34]
+        - paragraph [ref=e35]: And Generate nice Color Palettes
+        - generic [ref=e36]:
+          - textbox [ref=e37]: "#4A5E17"
+          - button "Generate" [ref=e38] [cursor=pointer]:
+            - generic [ref=e39]: 
+            - text: Generate
+        - paragraph
+    - img "color scheme left" [ref=e41]
+    - img "color palettes right" [ref=e43]
+  - text:   
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - heading "Generic Gradient" [level=2] [ref=e47]
+      - generic [ref=e48]:
+        - textbox [ref=e51]: "#4a5e17"
+        - textbox [ref=e54]: "#295e31"
+        - textbox [ref=e57]: "#005b47"
+        - textbox [ref=e60]: "#005656"
+        - textbox [ref=e63]: "#144f5c"
+        - textbox [ref=e66]: "#2f4858"
+    - generic [ref=e67]:
+      - heading "Matching Gradient" [level=2] [ref=e68]
+      - generic [ref=e69]:
+        - textbox [ref=e72]: "#4a5e17"
+        - textbox [ref=e75]: "#3d6f2c"
+        - textbox [ref=e78]: "#218048"
+        - textbox [ref=e81]: "#009169"
+        - textbox [ref=e84]: "#00a18f"
+        - textbox [ref=e87]: "#00b1b9"
+    - generic [ref=e88]:
+      - heading "Spot Palette" [level=2] [ref=e89]
+      - generic [ref=e90]:
+        - textbox [ref=e93]: "#4a5e17"
+        - textbox [ref=e96]: "#7d9047"
+        - textbox [ref=e99]: "#ecf5ce"
+        - textbox [ref=e102]: "#00c9d4"
+    - generic [ref=e103]:
+      - heading "Twisted Spot Palette" [level=2] [ref=e104]
+      - generic [ref=e105]:
+        - textbox [ref=e108]: "#4a5e17"
+        - textbox [ref=e111]: "#00c9d4"
+        - textbox [ref=e114]: "#befcfd"
+        - textbox [ref=e117]: "#458082"
+    - generic [ref=e118]:
+      - heading "Classy Palette" [level=2] [ref=e119]
+      - generic [ref=e120]:
+        - textbox [ref=e123]: "#4a5e17"
+        - textbox [ref=e126]: "#a9ad9b"
+        - textbox [ref=e129]: "#757968"
+        - textbox [ref=e132]: "#006675"
+        - textbox [ref=e135]: "#009aa9"
+    - generic [ref=e136]:
+      - heading "Cube Palette" [level=2] [ref=e137]
+      - generic [ref=e138]:
+        - textbox [ref=e141]: "#4a5e17"
+        - textbox [ref=e144]: "#a59875"
+        - textbox [ref=e147]: "#386c5f"
+    - generic [ref=e148]:
+      - heading "Switch Palette" [level=2] [ref=e149]
+      - generic [ref=e150]:
+        - textbox [ref=e153]: "#4a5e17"
+        - textbox [ref=e156]: "#c7db8d"
+        - textbox [ref=e159]: "#00c9d4"
+        - textbox [ref=e162]: "#fffbce"
+    - generic [ref=e163]:
+      - heading "Small Switch Palette" [level=2] [ref=e164]
+      - generic [ref=e165]:
+        - textbox [ref=e168]: "#4a5e17"
+        - textbox [ref=e171]: "#f9f0dd"
+        - textbox [ref=e174]: "#94824f"
+    - generic [ref=e175]:
+      - heading "Skip Gradient" [level=2] [ref=e176]
+      - generic [ref=e177]:
+        - textbox [ref=e180]: "#4a5e17"
+        - textbox [ref=e183]: "#ffca99"
+        - textbox [ref=e186]: "#f19465"
+        - textbox [ref=e189]: "#b56035"
+    - generic [ref=e190]:
+      - heading "Natural Palette" [level=2] [ref=e191]
+      - generic [ref=e192]:
+        - textbox [ref=e195]: "#4a5e17"
+        - textbox [ref=e198]: "#8b9569"
+        - textbox [ref=e201]: "#f8fbeb"
+        - textbox [ref=e204]: "#fffbce"
+    - generic [ref=e205]:
+      - heading "Matching Palette" [level=2] [ref=e206]
+      - generic [ref=e207]:
+        - textbox [ref=e210]: "#4a5e17"
+        - textbox [ref=e213]: "#454839"
+        - textbox [ref=e216]: "#a9ad9b"
+        - textbox [ref=e219]: "#00676c"
+        - textbox [ref=e222]: "#009ba0"
+    - generic [ref=e223]:
+      - heading "Squash Palette" [level=2] [ref=e224]
+      - generic [ref=e225]:
+        - textbox [ref=e228]: "#4a5e17"
+        - textbox [ref=e231]: "#0062ad"
+        - textbox [ref=e234]: "#a12b28"
+    - generic [ref=e235]:
+      - heading "Grey Friends" [level=2] [ref=e236]
+      - generic [ref=e237]:
+        - textbox [ref=e240]: "#4a5e17"
+        - textbox [ref=e243]: "#454839"
+        - textbox [ref=e246]: "#a9ad9b"
+    - generic [ref=e247]:
+      - heading "Dotting Palette" [level=2] [ref=e248]
+      - generic [ref=e249]:
+        - textbox [ref=e252]: "#4a5e17"
+        - textbox [ref=e255]: "#a9ad9b"
+        - textbox [ref=e258]: "#006675"
+        - textbox [ref=e261]: "#94b0b3"
+    - generic [ref=e262]:
+      - heading "Skip Shade Gradient" [level=2] [ref=e263]
+      - generic [ref=e264]:
+        - textbox [ref=e267]: "#4a5e17"
+        - textbox [ref=e270]: "#928334"
+        - textbox [ref=e273]: "#e0a75e"
+        - textbox [ref=e276]: "#ffca99"
+    - generic [ref=e277]:
+      - heading "Threedom" [level=2] [ref=e278]
+      - generic [ref=e279]:
+        - textbox [ref=e282]: "#4a5e17"
+        - textbox [ref=e285]: "#0067a0"
+        - textbox [ref=e288]: "#9e285c"
+    - generic [ref=e289]:
+      - heading "Highlight Palette" [level=2] [ref=e290]
+      - generic [ref=e291]:
+        - textbox [ref=e294]: "#4a5e17"
+        - textbox [ref=e297]: "#91b92c"
+        - textbox [ref=e300]: "#fffbce"
+        - textbox [ref=e303]: "#386c5f"
+    - generic [ref=e304]:
+      - heading "Neighbor Palette" [level=2] [ref=e305]
+      - generic [ref=e306]:
+        - textbox [ref=e309]: "#4a5e17"
+        - textbox [ref=e312]: "#b8aa87"
+        - textbox [ref=e315]: "#877643"
+        - textbox [ref=e318]: "#4c4637"
+    - generic [ref=e319]:
+      - heading "Discreet Palette" [level=2] [ref=e320]
+      - generic [ref=e321]:
+        - textbox [ref=e324]: "#4a5e17"
+        - textbox [ref=e327]: "#8b9569"
+        - textbox [ref=e330]: "#f7fbe8"
+        - textbox [ref=e333]: "#386c5f"
+    - generic [ref=e334]:
+      - heading "Dust Palette" [level=2] [ref=e335]
+      - generic [ref=e336]:
+        - textbox [ref=e339]: "#4a5e17"
+        - textbox [ref=e342]: "#a9ad9b"
+        - textbox [ref=e345]: "#757968"
+        - textbox [ref=e348]: "#009aa9"
+    - generic [ref=e349]:
+      - heading "Collective" [level=2] [ref=e350]
+      - generic [ref=e351]:
+        - textbox [ref=e354]: "#4a5e17"
+        - textbox [ref=e357]: "#036617"
+        - textbox [ref=e360]: "#006b80"
+    - generic [ref=e361]:
+      - heading "Friend palette" [level=2] [ref=e362]
+      - generic [ref=e363]:
+        - textbox [ref=e366]: "#4a5e17"
+        - textbox [ref=e369]: "#a0b368"
+        - textbox [ref=e372]: "#00c9d4"
+        - textbox [ref=e375]: "#005c6b"
+    - generic [ref=e376]:
+      - heading "Pin Palette" [level=2] [ref=e377]
+      - generic [ref=e378]:
+        - textbox [ref=e381]: "#4a5e17"
+        - textbox [ref=e384]: "#91b92c"
+        - textbox [ref=e387]: "#fffbce"
+        - textbox [ref=e390]: "#00c9d4"
+    - generic [ref=e391]:
+      - heading "Shades" [level=2] [ref=e392]
+      - generic [ref=e393]:
+        - textbox [ref=e396]: "#4a5e17"
+        - textbox [ref=e399]: "#6a7d36"
+        - textbox [ref=e402]: "#8b9e54"
+        - textbox [ref=e405]: "#adc074"
+        - textbox [ref=e408]: "#d0e495"
+    - generic [ref=e409]:
+      - heading "Random Shades" [level=2] [ref=e410]
+      - generic [ref=e411]:
+        - textbox [ref=e414]: "#4a5e17"
+        - textbox [ref=e417]: "#b3c67a"
+        - textbox [ref=e420]: "#324600"
+        - textbox [ref=e423]: "#e9fcac"
+        - textbox [ref=e426]: "#adc175"
+  - generic [ref=e428]:
+    - generic [ref=e429]:
+      - generic [ref=e431]:
+        - heading "Color Space Color Palettes Generator" [level=3] [ref=e432]:
+          - text: Color Space
+          - generic [ref=e433]: Color Palettes Generator
+        - generic [ref=e434]: Your space for everything that has to do with color
+        - paragraph [ref=e435]:
+          - text: We have set ourselves the task to create one place where you can find matching colors, generate nice color palettes and learn more about color conversions and meaning. Sometimes it is hard to find inspiration for a good color scheme or you do not have the time to experiment until you find matching colors. To facilitate this process, we investigated this set of tools and want to share it with you.
+          - text: Feel free to use the color palettes or gradients in your project. If you want, you can recommend our site or refer it to your friends and workmates. We are always happy to hear from you.
+          - text: Our collection of tools has just been released and is currently in beta. At the moment, you can generate color palettes or
+          - link "create nice CSS gradients" [ref=e436] [cursor=pointer]:
+            - /url: /gradient
+          - text: from colors of your choice. A whole new set of different tools is currently in work. There will also be an App for Android. If you want to stay up to date, have any questions, or even suggestions, please do not hesitate to
+          - link "contact us!" [ref=e437] [cursor=pointer]:
+            - /url: mailto:hi@mycolor.space
+      - img "color gradient spacecraft" [ref=e439]
+    - contentinfo [ref=e441]:
+      - generic [ref=e442]:
+        - link "color space logo ColorSpace Beta" [ref=e443] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e444]:
+            - img "color space logo" [ref=e445]
+            - generic [ref=e446]: ColorSpace Beta
+        - link "hi@mycolor.space" [ref=e448] [cursor=pointer]:
+          - /url: mailto:hi@mycolor.space
+        - generic [ref=e449]:
+          - text: Made with
+          - generic [ref=e450]: 
+          - text: by Rikku
+        - generic [ref=e451]:
+          - link "color space twitter" [ref=e452] [cursor=pointer]:
+            - /url: https://twitter.com/MyColorSpaces
+            - generic [ref=e453]: 
+          - link "color space facebook" [ref=e454] [cursor=pointer]:
+            - /url: https://www.facebook.com/ColorSpace-478807665826704/
+            - generic [ref=e455]: 
+      - navigation [ref=e457]:
+        - list [ref=e458]:
+          - listitem [ref=e459]:
+            - link "Contact" [ref=e460] [cursor=pointer]:
+              - /url: /contact.php

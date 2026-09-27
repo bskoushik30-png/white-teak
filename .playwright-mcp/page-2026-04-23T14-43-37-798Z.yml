@@ -1,0 +1,760 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "White Teak Logo WHITE TEAK Coffee Roasters · est." [ref=e5] [cursor=pointer]:
+        - /url: "#hero"
+        - img "White Teak Logo" [ref=e8]
+        - generic [ref=e9]:
+          - generic [ref=e10]: WHITE TEAK
+          - generic [ref=e11]: Coffee Roasters · est.
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: "#hero"
+          - text: Home
+        - link "Story" [ref=e14] [cursor=pointer]:
+          - /url: "#story"
+          - text: Story
+        - link "Menu" [ref=e15] [cursor=pointer]:
+          - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+          - text: Menu
+        - link "Testimonials" [ref=e16] [cursor=pointer]:
+          - /url: "#testimonials"
+          - text: Testimonials
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: "#footer"
+          - text: Contact
+      - link "Order Now" [ref=e18] [cursor=pointer]:
+        - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - img [ref=e21]
+      - img [ref=e24]
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - heading "Where coffee and cuisine harmonize with nature." [level=1] [ref=e29]:
+            - generic [ref=e31]: Where coffee
+            - generic [ref=e33]: and cuisine harmonize
+            - generic [ref=e35]: with nature.
+          - paragraph [ref=e36]: A haven in the heart of Gokulam where the art of specialty coffee meets the craft of soulful food — weaving a tapestry of unhurried, all-day cafe moments.
+          - generic [ref=e37]:
+            - link "Explore the Menu" [ref=e38] [cursor=pointer]:
+              - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+              - text: Explore the Menu
+              - img [ref=e39]
+            - link "Visit the Cafe" [ref=e41] [cursor=pointer]:
+              - /url: https://www.google.com/maps/dir//D13%2FB,+Gokulam+Main+Rd,+Vani+Vilas+Mohalla,+Mysuru,+Karnataka+570002/@12.3282263,76.5461313,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3baf7b6d8a3f990f:0xab0db788a2ac2962!2m2!1d76.6285332!2d12.3282387?entry=ttu
+        - img [ref=e50]
+    - generic [ref=e52]:
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - paragraph [ref=e56]: Our Menu
+          - heading "Crafted food & drinks." [level=2] [ref=e57]
+        - generic [ref=e58]:
+          - paragraph [ref=e59]: Every plate and every cup on our menu is a small ceremony — made slow, with local ingredients and a lot of heart.
+          - link "View Full Menu" [ref=e60] [cursor=pointer]:
+            - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+            - text: View Full Menu
+            - generic [ref=e61]: →
+      - generic [ref=e63]:
+        - img "Dish 1" [ref=e65]
+        - img "Dish 2" [ref=e67]
+        - img "Dish 3" [ref=e69]
+        - img "Dish 4" [ref=e71]
+        - img "Dish 5" [ref=e73]
+        - img "Dish 6" [ref=e75]
+        - img "Dish 1" [ref=e77]
+        - img "Dish 2" [ref=e79]
+        - img "Dish 3" [ref=e81]
+        - img "Dish 4" [ref=e83]
+        - img "Dish 5" [ref=e85]
+        - img "Dish 6" [ref=e87]
+        - img "Dish 1" [ref=e89]
+        - img "Dish 2" [ref=e91]
+        - img "Dish 3" [ref=e93]
+        - img "Dish 4" [ref=e95]
+        - img "Dish 5" [ref=e97]
+        - img "Dish 6" [ref=e99]
+      - generic [ref=e101]:
+        - link "Coffee 01 Coffee Single origin pours" [ref=e102] [cursor=pointer]:
+          - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+          - generic [ref=e103]:
+            - img "Coffee" [ref=e107]
+            - generic [ref=e109]: "01"
+          - generic [ref=e110]:
+            - paragraph [ref=e111]: Coffee
+            - paragraph [ref=e112]: Single origin pours
+        - link "Breakfast 02 Breakfast Slow mornings" [ref=e113] [cursor=pointer]:
+          - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+          - generic [ref=e114]:
+            - img "Breakfast" [ref=e118]
+            - generic [ref=e120]: "02"
+          - generic [ref=e121]:
+            - paragraph [ref=e122]: Breakfast
+            - paragraph [ref=e123]: Slow mornings
+        - link "Desserts 03 Desserts Sweet finishes" [ref=e124] [cursor=pointer]:
+          - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+          - generic [ref=e125]:
+            - img "Desserts" [ref=e129]
+            - generic [ref=e131]: "03"
+          - generic [ref=e132]:
+            - paragraph [ref=e133]: Desserts
+            - paragraph [ref=e134]: Sweet finishes
+        - link "Savoury 04 Savoury Hearty plates" [ref=e135] [cursor=pointer]:
+          - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+          - generic [ref=e136]:
+            - img "Savoury" [ref=e140]
+            - generic [ref=e142]: "04"
+          - generic [ref=e143]:
+            - paragraph [ref=e144]: Savoury
+            - paragraph [ref=e145]: Hearty plates
+        - link "Beverages 05 Beverages Crafted sips" [ref=e146] [cursor=pointer]:
+          - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+          - generic [ref=e147]:
+            - img "Beverages" [ref=e151]
+            - generic [ref=e153]: "05"
+          - generic [ref=e154]:
+            - paragraph [ref=e155]: Beverages
+            - paragraph [ref=e156]: Crafted sips
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - paragraph [ref=e160]: Escape · Breathe · Savor
+        - heading "Nature's embrace." [level=2] [ref=e161]
+        - paragraph [ref=e162]: A dining experience enveloped in warmth — open sky above, warm wood beneath, and the soft hum of the garden at your elbow.
+      - generic [ref=e163]:
+        - generic [ref=e164]:
+          - img "Garden Courtyard" [ref=e165]
+          - img "Canopy Dining" [ref=e166]
+          - img "Golden Hour" [ref=e167]
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - paragraph [ref=e171]: 01 · Garden Courtyard
+              - paragraph [ref=e172]: Where time slows down.
+            - generic [ref=e173]:
+              - button "View image 1" [ref=e174]
+              - button "View image 2" [ref=e175]
+              - button "View image 3" [ref=e176]
+        - generic [ref=e177]:
+          - button "01" [ref=e178]:
+            - generic [ref=e180]: "01"
+          - button "02" [ref=e181]:
+            - generic [ref=e183]: "02"
+          - button "03" [ref=e184]:
+            - generic [ref=e186]: "03"
+    - generic [ref=e189]:
+      - generic [ref=e190]:
+        - paragraph [ref=e191]: Our Story
+        - paragraph [ref=e193]: "\"Filtered with Love\": being the foundation for our all-day cafe born out of a mutual love for specialty coffee and craft food."
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - generic:
+              - generic: ☕
+          - generic [ref=e201]:
+            - generic [ref=e202]:
+              - generic [ref=e203]: "01"
+              - heading "The Coffee" [level=3] [ref=e204]
+            - generic [ref=e206]:
+              - paragraph [ref=e207]: Along with being our founding-planter, we have chosen to work in direct trade relationships at origin with coffee estates and smallholder farmers, harvesting and processing coffees that we aim to curate into only SCA 85+ point scoring coffees.
+              - paragraph [ref=e208]: We take pride in the intentional introduction of White Teak "Cascara" coffee cherry tea, the dried skin of coffee cherries that can be brewed much like any other specialty tea.
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - generic:
+              - generic: 🌿
+          - generic [ref=e212]:
+            - generic [ref=e213]:
+              - generic [ref=e214]: "02"
+              - heading "The Teas" [level=3] [ref=e215]
+            - generic [ref=e217]:
+              - paragraph [ref=e218]: We source teas direct from farmers and craft them into unique blends in small batches. Freshness matters to us, so the menu stays focused and deliberate instead of overextended.
+              - paragraph [ref=e219]: We never choose flavor over health. Every blend is built with 100% natural ingredients and made to feel as clean as it tastes.
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - generic:
+              - generic: 🍞
+          - generic [ref=e223]:
+            - generic [ref=e224]:
+              - generic [ref=e225]: "03"
+              - heading "The Bakes" [level=3] [ref=e226]
+            - generic [ref=e228]:
+              - paragraph [ref=e229]: Our bakes come from a craft kitchen that treats comfort food with the same care we give coffee. Each recipe is developed in-house, from signature staples to seasonal additions.
+              - paragraph [ref=e230]: The result is food that feels familiar, but still specific to White Teak in texture, warmth, and detail.
+        - generic [ref=e231]:
+          - generic [ref=e232]:
+            - generic:
+              - generic: ⚖️
+          - generic [ref=e234]:
+            - generic [ref=e235]:
+              - generic [ref=e236]: "04"
+              - heading "Home Brewing" [level=3] [ref=e237]
+            - generic [ref=e239]:
+              - paragraph [ref=e240]: We curate brewing equipment for people who want to take the White Teak ritual home, whether they are just starting out or refining a daily practice.
+              - paragraph [ref=e241]: The aim is not to overwhelm, but to make better brewing feel accessible, calm, and repeatable.
+        - generic [ref=e242]:
+          - generic [ref=e243]:
+            - generic:
+              - generic: 🎶
+          - generic [ref=e245]:
+            - generic [ref=e246]:
+              - generic [ref=e247]: "05"
+              - heading "Events" [level=3] [ref=e248]
+            - generic [ref=e250]:
+              - paragraph [ref=e251]: We bring together communities across walks of life through specially curated events that celebrate coffee, craft, design, and conversation.
+              - paragraph [ref=e252]: This part of the story turns the cafe into a shared space for artists, makers, musicians, and social changemakers.
+    - generic [ref=e256]:
+      - generic [ref=e257]:
+        - heading "From Heart to Hands, Farm to Cup" [level=2] [ref=e258]
+        - paragraph [ref=e259]: Our Coffee Farms Nestled in Nature's Embrace
+      - generic [ref=e260]:
+        - generic [ref=e261]:
+          - img "Coffee farm 1" [ref=e262]
+          - img "Coffee farm 2" [ref=e263]
+          - img "Coffee farm 3" [ref=e264]
+        - generic [ref=e265]:
+          - button "View farm image 1" [ref=e266]
+          - button "View farm image 2" [ref=e267]
+          - button "View farm image 3" [ref=e268]
+    - generic [ref=e271]:
+      - generic [ref=e272]:
+        - img "Handpicked Specialty Coffee" [ref=e274]
+        - generic [ref=e275]:
+          - paragraph [ref=e276]: From Farm to Your Cup
+          - heading "Handpicked Specialty Coffee" [level=3] [ref=e277]
+      - generic [ref=e278]:
+        - img "Brewing adventures" [ref=e280]
+        - generic [ref=e281]:
+          - paragraph [ref=e282]: Explore our curated collection of brewing equipment
+          - heading "Brewing adventures" [level=3] [ref=e283]
+      - generic [ref=e284]:
+        - img "Freshly Baked Goodness" [ref=e286]
+        - generic [ref=e287]:
+          - paragraph [ref=e288]: A Perfect Harmony with Our Coffee
+          - heading "Freshly Baked Goodness" [level=3] [ref=e289]
+      - generic [ref=e290]:
+        - img "Natural Oasis" [ref=e292]
+        - generic [ref=e293]:
+          - paragraph [ref=e294]: Immerse yourself in the tranquility of nature at our cafe
+          - heading "Natural Oasis" [level=3] [ref=e295]
+    - generic [ref=e296]:
+      - generic [ref=e297]:
+        - generic [ref=e298]: Testimonials
+        - heading "Loved by 2,400+ Guests" [level=2] [ref=e299]
+        - generic [ref=e300]:
+          - img [ref=e301]
+          - generic [ref=e306]: "4.8"
+          - generic [ref=e307]:
+            - img [ref=e308]
+            - img [ref=e310]
+            - img [ref=e312]
+            - img [ref=e314]
+            - img [ref=e316]
+          - generic [ref=e318]: on Google
+      - generic [ref=e320]:
+        - generic [ref=e321]:
+          - img [ref=e322]
+          - paragraph [ref=e324]: Warm ambience creates the ideal relaxation spot. Cheesecake and Pasta are top-notch!
+          - generic [ref=e326]:
+            - generic [ref=e328]: J
+            - generic [ref=e329]:
+              - generic [ref=e330]: Jashwanth H.
+              - generic [ref=e331]:
+                - img [ref=e332]
+                - img [ref=e334]
+                - img [ref=e336]
+                - img [ref=e338]
+                - img [ref=e340]
+            - img [ref=e343]
+        - generic [ref=e348]:
+          - img [ref=e349]
+          - paragraph [ref=e351]: An absolute gem for ambience and cuisine. Blueberry Cheesecake Waffle is a standout.
+          - generic [ref=e353]:
+            - generic [ref=e355]: A
+            - generic [ref=e356]:
+              - generic [ref=e357]: Abhijit P.
+              - generic [ref=e358]:
+                - img [ref=e359]
+                - img [ref=e361]
+                - img [ref=e363]
+                - img [ref=e365]
+                - img [ref=e367]
+            - img [ref=e370]
+        - generic [ref=e375]:
+          - img [ref=e376]
+          - paragraph [ref=e378]: Really nice vibe, especially the evening terrace. Americano is a must-try!
+          - generic [ref=e380]:
+            - generic [ref=e382]: A
+            - generic [ref=e383]:
+              - generic [ref=e384]: Arpitha S.
+              - generic [ref=e385]:
+                - img [ref=e386]
+                - img [ref=e388]
+                - img [ref=e390]
+                - img [ref=e392]
+                - img [ref=e394]
+            - img [ref=e397]
+        - generic [ref=e402]:
+          - img [ref=e403]
+          - paragraph [ref=e405]: Absolute delight for ambiance seekers. Soft lighting and natural wood accents — cozy comfort.
+          - generic [ref=e407]:
+            - generic [ref=e409]: B
+            - generic [ref=e410]:
+              - generic [ref=e411]: Ballanda K.
+              - generic [ref=e412]:
+                - img [ref=e413]
+                - img [ref=e415]
+                - img [ref=e417]
+                - img [ref=e419]
+                - img [ref=e421]
+            - img [ref=e424]
+        - generic [ref=e429]:
+          - img [ref=e430]
+          - paragraph [ref=e432]: Spacious cafe with plenty of seating. Turkish eggs and shakshuka were excellent!
+          - generic [ref=e434]:
+            - generic [ref=e436]: "N"
+            - generic [ref=e437]:
+              - generic [ref=e438]: Navneeth G M.
+              - generic [ref=e439]:
+                - img [ref=e440]
+                - img [ref=e442]
+                - img [ref=e444]
+                - img [ref=e446]
+                - img [ref=e448]
+            - img [ref=e451]
+        - generic [ref=e456]:
+          - img [ref=e457]
+          - paragraph [ref=e459]: A lovely outdoor place for breakfast and brunch. Spacious seating and generous portions.
+          - generic [ref=e461]:
+            - generic [ref=e463]: S
+            - generic [ref=e464]:
+              - generic [ref=e465]: Srinivas S.
+              - generic [ref=e466]:
+                - img [ref=e467]
+                - img [ref=e469]
+                - img [ref=e471]
+                - img [ref=e473]
+                - img [ref=e475]
+            - img [ref=e478]
+        - generic [ref=e483]:
+          - img [ref=e484]
+          - paragraph [ref=e486]: Good food, great coffee and beautiful ambience. Will definitely visit again!
+          - generic [ref=e488]:
+            - generic [ref=e490]: S
+            - generic [ref=e491]:
+              - generic [ref=e492]: Shashikala T.
+              - generic [ref=e493]:
+                - img [ref=e494]
+                - img [ref=e496]
+                - img [ref=e498]
+                - img [ref=e500]
+                - img [ref=e502]
+            - img [ref=e505]
+        - generic [ref=e510]:
+          - img [ref=e511]
+          - paragraph [ref=e513]: Crispy bacon, runny eggs, golden toast — English breakfast done right. Serene atmosphere.
+          - generic [ref=e515]:
+            - generic [ref=e517]: A
+            - generic [ref=e518]:
+              - generic [ref=e519]: Abhishek J R.
+              - generic [ref=e520]:
+                - img [ref=e521]
+                - img [ref=e523]
+                - img [ref=e525]
+                - img [ref=e527]
+                - img [ref=e529]
+            - img [ref=e532]
+        - generic [ref=e537]:
+          - img [ref=e538]
+          - paragraph [ref=e540]: Charming little spot with a beautiful courtyard. Apple pie and cappuccino were excellent.
+          - generic [ref=e542]:
+            - generic [ref=e544]: R
+            - generic [ref=e545]:
+              - generic [ref=e546]: RolfMaria K.
+              - generic [ref=e547]:
+                - img [ref=e548]
+                - img [ref=e550]
+                - img [ref=e552]
+                - img [ref=e554]
+                - img [ref=e556]
+            - img [ref=e559]
+        - generic [ref=e564]:
+          - img [ref=e565]
+          - paragraph [ref=e567]: Coffee is rich and full of flavour. The Zoodles are a must-try!
+          - generic [ref=e569]:
+            - generic [ref=e571]: S
+            - generic [ref=e572]:
+              - generic [ref=e573]: Sridevi R.
+              - generic [ref=e574]:
+                - img [ref=e575]
+                - img [ref=e577]
+                - img [ref=e579]
+                - img [ref=e581]
+                - img [ref=e583]
+            - img [ref=e586]
+        - generic [ref=e591]:
+          - img [ref=e592]
+          - paragraph [ref=e594]: A beautiful place to spend time with family or friends. Irish coffee is a highlight!
+          - generic [ref=e596]:
+            - generic [ref=e598]: K
+            - generic [ref=e599]:
+              - generic [ref=e600]: Kusuma E.
+              - generic [ref=e601]:
+                - img [ref=e602]
+                - img [ref=e604]
+                - img [ref=e606]
+                - img [ref=e608]
+                - img [ref=e610]
+            - img [ref=e613]
+        - generic [ref=e618]:
+          - img [ref=e619]
+          - paragraph [ref=e621]: Warm ambience creates the ideal relaxation spot. Cheesecake and Pasta are top-notch!
+          - generic [ref=e623]:
+            - generic [ref=e625]: J
+            - generic [ref=e626]:
+              - generic [ref=e627]: Jashwanth H.
+              - generic [ref=e628]:
+                - img [ref=e629]
+                - img [ref=e631]
+                - img [ref=e633]
+                - img [ref=e635]
+                - img [ref=e637]
+            - img [ref=e640]
+        - generic [ref=e645]:
+          - img [ref=e646]
+          - paragraph [ref=e648]: An absolute gem for ambience and cuisine. Blueberry Cheesecake Waffle is a standout.
+          - generic [ref=e650]:
+            - generic [ref=e652]: A
+            - generic [ref=e653]:
+              - generic [ref=e654]: Abhijit P.
+              - generic [ref=e655]:
+                - img [ref=e656]
+                - img [ref=e658]
+                - img [ref=e660]
+                - img [ref=e662]
+                - img [ref=e664]
+            - img [ref=e667]
+        - generic [ref=e672]:
+          - img [ref=e673]
+          - paragraph [ref=e675]: Really nice vibe, especially the evening terrace. Americano is a must-try!
+          - generic [ref=e677]:
+            - generic [ref=e679]: A
+            - generic [ref=e680]:
+              - generic [ref=e681]: Arpitha S.
+              - generic [ref=e682]:
+                - img [ref=e683]
+                - img [ref=e685]
+                - img [ref=e687]
+                - img [ref=e689]
+                - img [ref=e691]
+            - img [ref=e694]
+        - generic [ref=e699]:
+          - img [ref=e700]
+          - paragraph [ref=e702]: Absolute delight for ambiance seekers. Soft lighting and natural wood accents — cozy comfort.
+          - generic [ref=e704]:
+            - generic [ref=e706]: B
+            - generic [ref=e707]:
+              - generic [ref=e708]: Ballanda K.
+              - generic [ref=e709]:
+                - img [ref=e710]
+                - img [ref=e712]
+                - img [ref=e714]
+                - img [ref=e716]
+                - img [ref=e718]
+            - img [ref=e721]
+        - generic [ref=e726]:
+          - img [ref=e727]
+          - paragraph [ref=e729]: Spacious cafe with plenty of seating. Turkish eggs and shakshuka were excellent!
+          - generic [ref=e731]:
+            - generic [ref=e733]: "N"
+            - generic [ref=e734]:
+              - generic [ref=e735]: Navneeth G M.
+              - generic [ref=e736]:
+                - img [ref=e737]
+                - img [ref=e739]
+                - img [ref=e741]
+                - img [ref=e743]
+                - img [ref=e745]
+            - img [ref=e748]
+        - generic [ref=e753]:
+          - img [ref=e754]
+          - paragraph [ref=e756]: A lovely outdoor place for breakfast and brunch. Spacious seating and generous portions.
+          - generic [ref=e758]:
+            - generic [ref=e760]: S
+            - generic [ref=e761]:
+              - generic [ref=e762]: Srinivas S.
+              - generic [ref=e763]:
+                - img [ref=e764]
+                - img [ref=e766]
+                - img [ref=e768]
+                - img [ref=e770]
+                - img [ref=e772]
+            - img [ref=e775]
+        - generic [ref=e780]:
+          - img [ref=e781]
+          - paragraph [ref=e783]: Good food, great coffee and beautiful ambience. Will definitely visit again!
+          - generic [ref=e785]:
+            - generic [ref=e787]: S
+            - generic [ref=e788]:
+              - generic [ref=e789]: Shashikala T.
+              - generic [ref=e790]:
+                - img [ref=e791]
+                - img [ref=e793]
+                - img [ref=e795]
+                - img [ref=e797]
+                - img [ref=e799]
+            - img [ref=e802]
+        - generic [ref=e807]:
+          - img [ref=e808]
+          - paragraph [ref=e810]: Crispy bacon, runny eggs, golden toast — English breakfast done right. Serene atmosphere.
+          - generic [ref=e812]:
+            - generic [ref=e814]: A
+            - generic [ref=e815]:
+              - generic [ref=e816]: Abhishek J R.
+              - generic [ref=e817]:
+                - img [ref=e818]
+                - img [ref=e820]
+                - img [ref=e822]
+                - img [ref=e824]
+                - img [ref=e826]
+            - img [ref=e829]
+        - generic [ref=e834]:
+          - img [ref=e835]
+          - paragraph [ref=e837]: Charming little spot with a beautiful courtyard. Apple pie and cappuccino were excellent.
+          - generic [ref=e839]:
+            - generic [ref=e841]: R
+            - generic [ref=e842]:
+              - generic [ref=e843]: RolfMaria K.
+              - generic [ref=e844]:
+                - img [ref=e845]
+                - img [ref=e847]
+                - img [ref=e849]
+                - img [ref=e851]
+                - img [ref=e853]
+            - img [ref=e856]
+        - generic [ref=e861]:
+          - img [ref=e862]
+          - paragraph [ref=e864]: Coffee is rich and full of flavour. The Zoodles are a must-try!
+          - generic [ref=e866]:
+            - generic [ref=e868]: S
+            - generic [ref=e869]:
+              - generic [ref=e870]: Sridevi R.
+              - generic [ref=e871]:
+                - img [ref=e872]
+                - img [ref=e874]
+                - img [ref=e876]
+                - img [ref=e878]
+                - img [ref=e880]
+            - img [ref=e883]
+        - generic [ref=e888]:
+          - img [ref=e889]
+          - paragraph [ref=e891]: A beautiful place to spend time with family or friends. Irish coffee is a highlight!
+          - generic [ref=e893]:
+            - generic [ref=e895]: K
+            - generic [ref=e896]:
+              - generic [ref=e897]: Kusuma E.
+              - generic [ref=e898]:
+                - img [ref=e899]
+                - img [ref=e901]
+                - img [ref=e903]
+                - img [ref=e905]
+                - img [ref=e907]
+            - img [ref=e910]
+        - generic [ref=e915]:
+          - img [ref=e916]
+          - paragraph [ref=e918]: Warm ambience creates the ideal relaxation spot. Cheesecake and Pasta are top-notch!
+          - generic [ref=e920]:
+            - generic [ref=e922]: J
+            - generic [ref=e923]:
+              - generic [ref=e924]: Jashwanth H.
+              - generic [ref=e925]:
+                - img [ref=e926]
+                - img [ref=e928]
+                - img [ref=e930]
+                - img [ref=e932]
+                - img [ref=e934]
+            - img [ref=e937]
+        - generic [ref=e942]:
+          - img [ref=e943]
+          - paragraph [ref=e945]: An absolute gem for ambience and cuisine. Blueberry Cheesecake Waffle is a standout.
+          - generic [ref=e947]:
+            - generic [ref=e949]: A
+            - generic [ref=e950]:
+              - generic [ref=e951]: Abhijit P.
+              - generic [ref=e952]:
+                - img [ref=e953]
+                - img [ref=e955]
+                - img [ref=e957]
+                - img [ref=e959]
+                - img [ref=e961]
+            - img [ref=e964]
+        - generic [ref=e969]:
+          - img [ref=e970]
+          - paragraph [ref=e972]: Really nice vibe, especially the evening terrace. Americano is a must-try!
+          - generic [ref=e974]:
+            - generic [ref=e976]: A
+            - generic [ref=e977]:
+              - generic [ref=e978]: Arpitha S.
+              - generic [ref=e979]:
+                - img [ref=e980]
+                - img [ref=e982]
+                - img [ref=e984]
+                - img [ref=e986]
+                - img [ref=e988]
+            - img [ref=e991]
+        - generic [ref=e996]:
+          - img [ref=e997]
+          - paragraph [ref=e999]: Absolute delight for ambiance seekers. Soft lighting and natural wood accents — cozy comfort.
+          - generic [ref=e1001]:
+            - generic [ref=e1003]: B
+            - generic [ref=e1004]:
+              - generic [ref=e1005]: Ballanda K.
+              - generic [ref=e1006]:
+                - img [ref=e1007]
+                - img [ref=e1009]
+                - img [ref=e1011]
+                - img [ref=e1013]
+                - img [ref=e1015]
+            - img [ref=e1018]
+        - generic [ref=e1023]:
+          - img [ref=e1024]
+          - paragraph [ref=e1026]: Spacious cafe with plenty of seating. Turkish eggs and shakshuka were excellent!
+          - generic [ref=e1028]:
+            - generic [ref=e1030]: "N"
+            - generic [ref=e1031]:
+              - generic [ref=e1032]: Navneeth G M.
+              - generic [ref=e1033]:
+                - img [ref=e1034]
+                - img [ref=e1036]
+                - img [ref=e1038]
+                - img [ref=e1040]
+                - img [ref=e1042]
+            - img [ref=e1045]
+        - generic [ref=e1050]:
+          - img [ref=e1051]
+          - paragraph [ref=e1053]: A lovely outdoor place for breakfast and brunch. Spacious seating and generous portions.
+          - generic [ref=e1055]:
+            - generic [ref=e1057]: S
+            - generic [ref=e1058]:
+              - generic [ref=e1059]: Srinivas S.
+              - generic [ref=e1060]:
+                - img [ref=e1061]
+                - img [ref=e1063]
+                - img [ref=e1065]
+                - img [ref=e1067]
+                - img [ref=e1069]
+            - img [ref=e1072]
+        - generic [ref=e1077]:
+          - img [ref=e1078]
+          - paragraph [ref=e1080]: Good food, great coffee and beautiful ambience. Will definitely visit again!
+          - generic [ref=e1082]:
+            - generic [ref=e1084]: S
+            - generic [ref=e1085]:
+              - generic [ref=e1086]: Shashikala T.
+              - generic [ref=e1087]:
+                - img [ref=e1088]
+                - img [ref=e1090]
+                - img [ref=e1092]
+                - img [ref=e1094]
+                - img [ref=e1096]
+            - img [ref=e1099]
+        - generic [ref=e1104]:
+          - img [ref=e1105]
+          - paragraph [ref=e1107]: Crispy bacon, runny eggs, golden toast — English breakfast done right. Serene atmosphere.
+          - generic [ref=e1109]:
+            - generic [ref=e1111]: A
+            - generic [ref=e1112]:
+              - generic [ref=e1113]: Abhishek J R.
+              - generic [ref=e1114]:
+                - img [ref=e1115]
+                - img [ref=e1117]
+                - img [ref=e1119]
+                - img [ref=e1121]
+                - img [ref=e1123]
+            - img [ref=e1126]
+        - generic [ref=e1131]:
+          - img [ref=e1132]
+          - paragraph [ref=e1134]: Charming little spot with a beautiful courtyard. Apple pie and cappuccino were excellent.
+          - generic [ref=e1136]:
+            - generic [ref=e1138]: R
+            - generic [ref=e1139]:
+              - generic [ref=e1140]: RolfMaria K.
+              - generic [ref=e1141]:
+                - img [ref=e1142]
+                - img [ref=e1144]
+                - img [ref=e1146]
+                - img [ref=e1148]
+                - img [ref=e1150]
+            - img [ref=e1153]
+        - generic [ref=e1158]:
+          - img [ref=e1159]
+          - paragraph [ref=e1161]: Coffee is rich and full of flavour. The Zoodles are a must-try!
+          - generic [ref=e1163]:
+            - generic [ref=e1165]: S
+            - generic [ref=e1166]:
+              - generic [ref=e1167]: Sridevi R.
+              - generic [ref=e1168]:
+                - img [ref=e1169]
+                - img [ref=e1171]
+                - img [ref=e1173]
+                - img [ref=e1175]
+                - img [ref=e1177]
+            - img [ref=e1180]
+        - generic [ref=e1185]:
+          - img [ref=e1186]
+          - paragraph [ref=e1188]: A beautiful place to spend time with family or friends. Irish coffee is a highlight!
+          - generic [ref=e1190]:
+            - generic [ref=e1192]: K
+            - generic [ref=e1193]:
+              - generic [ref=e1194]: Kusuma E.
+              - generic [ref=e1195]:
+                - img [ref=e1196]
+                - img [ref=e1198]
+                - img [ref=e1200]
+                - img [ref=e1202]
+                - img [ref=e1204]
+            - img [ref=e1207]
+      - link "Read All Reviews on Google" [ref=e1213] [cursor=pointer]:
+        - /url: https://www.google.com/maps/place/White+Teak+Coffee+Roasters/@12.3282387,76.6285332,17z/data=!4m8!3m7!1s0x3baf7b6d8a3f990f:0xab0db788a2ac2962!8m2!3d12.3282387!4d76.6285332!9m1!1b1!16s%2Fg%2F11t7c0t7yl
+        - text: Read All Reviews on Google
+        - img [ref=e1214]
+  - contentinfo [ref=e1216]:
+    - generic [ref=e1217]:
+      - generic [ref=e1218]:
+        - link "Instagram" [ref=e1219] [cursor=pointer]:
+          - /url: https://www.instagram.com/whiteteakroasters/?hl=en
+          - img [ref=e1220]
+        - link "Facebook" [ref=e1224] [cursor=pointer]:
+          - /url: https://www.facebook.com/whiteteakroasters/
+          - img [ref=e1225]
+      - generic [ref=e1227]:
+        - generic [ref=e1228]:
+          - img [ref=e1230]
+          - heading "Find your way here" [level=4] [ref=e1232]
+          - paragraph [ref=e1233]: "Everyday:"
+          - paragraph [ref=e1234]: 8:30 am to 11 pm
+          - paragraph [ref=e1235]: D13/B, Gokulam Main Rd, Vani Vilas Mohalla, Mysuru, Karnataka 570002
+        - generic [ref=e1236]:
+          - img [ref=e1238]
+          - heading "Contact Us" [level=4] [ref=e1240]
+          - paragraph [ref=e1241]: "Whatsapp:"
+          - link "+919731999040" [ref=e1242] [cursor=pointer]:
+            - /url: https://wa.me/919154990266?text=
+          - link "whiteteak.social@gmail.com" [ref=e1243] [cursor=pointer]:
+            - /url: mailto:whiteteak.social@gmail.com
+        - generic [ref=e1244]:
+          - img [ref=e1246]
+          - heading "Order Now" [level=4] [ref=e1249]
+          - list [ref=e1250]:
+            - listitem [ref=e1251]:
+              - link "Direct" [ref=e1252] [cursor=pointer]:
+                - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+            - listitem [ref=e1253]:
+              - link "Zomato" [ref=e1254] [cursor=pointer]:
+                - /url: https://www.zomato.com/mysore/white-teak-coffee-roasters-gokulam
+            - listitem [ref=e1255]:
+              - link "Swiggy" [ref=e1256] [cursor=pointer]:
+                - /url: https://www.swiggy.com/restaurants/white-teak-coffee-roasters-gokulam-main-road-mysore-north-mysore-715606
+      - generic [ref=e1257]:
+        - paragraph [ref=e1258]: WHITE TEAK COFFEE ROASTERS®
+        - paragraph [ref=e1259]: ©Copyright 2024. White Teak Coffee Roasters. All Rights Reserved.
+  - button "Open Next.js Dev Tools" [ref=e1265] [cursor=pointer]:
+    - img [ref=e1266]
+  - alert [ref=e1269]

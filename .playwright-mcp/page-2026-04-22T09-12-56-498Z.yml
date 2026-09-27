@@ -1,0 +1,380 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - button "Toggle Sidebar" [ref=e3] [cursor=pointer]:
+      - img [ref=e6]
+      - generic [ref=e9]: Toggle Sidebar
+    - complementary [ref=e10]:
+      - generic [ref=e12]:
+        - button "Sorted by Id" [ref=e14] [cursor=pointer]:
+          - text: Sorted by Id
+          - img [ref=e15]
+        - generic [ref=e20] [cursor=pointer]: All Components
+        - link "01 Anime js scrollbar" [ref=e23] [cursor=pointer]:
+          - /url: /v1/skiper1
+          - generic [ref=e25]: 01 Anime js scrollbar
+        - link "02 Dynamic island" [ref=e28] [cursor=pointer]:
+          - /url: /v1/skiper2
+          - generic [ref=e30]: 02 Dynamic island
+        - link "03 Apple play button" [ref=e33] [cursor=pointer]:
+          - /url: /v1/skiper3
+          - generic [ref=e35]: 03 Apple play button
+        - link "04 Theme toggle buttons" [ref=e38] [cursor=pointer]:
+          - /url: /v1/skiper4
+          - generic [ref=e40]: 04 Theme toggle buttons
+        - link "05 Things drag and scroll" [ref=e43] [cursor=pointer]:
+          - /url: /v1/skiper5
+          - generic [ref=e45]: 05 Things drag and scroll
+        - link "06 Hover members" [ref=e48] [cursor=pointer]:
+          - /url: /v1/skiper6
+          - generic [ref=e50]: 06 Hover members
+        - link "07 Nike preloader" [ref=e53] [cursor=pointer]:
+          - /url: /v1/skiper7
+          - generic [ref=e55]: 07 Nike preloader
+        - link "08 Words preloader" [ref=e58] [cursor=pointer]:
+          - /url: /v1/skiper8
+          - generic [ref=e60]: 08 Words preloader
+        - link "09 Stairs preloader" [ref=e63] [cursor=pointer]:
+          - /url: /v1/skiper9
+          - generic [ref=e65]: 09 Stairs preloader
+        - link "10 Double stairs preloader" [ref=e68] [cursor=pointer]:
+          - /url: /v1/skiper10
+          - generic [ref=e70]: 10 Double stairs preloader
+        - link "11 Pixel preloader" [ref=e73] [cursor=pointer]:
+          - /url: /v1/skiper11
+          - generic [ref=e75]: 11 Pixel preloader
+        - link "12 Vercel Liquid simulation" [ref=e78] [cursor=pointer]:
+          - /url: /v1/skiper12
+          - generic [ref=e80]: 12 Vercel Liquid simulation
+        - link "13 Nike menu" [ref=e83] [cursor=pointer]:
+          - /url: /v1/skiper13
+          - generic [ref=e85]: 13 Nike menu
+        - link "14 Ascii Simulation" [ref=e88] [cursor=pointer]:
+          - /url: /v1/skiper14
+          - generic [ref=e90]: 14 Ascii Simulation
+        - link "15 Box loading preloader" [ref=e93] [cursor=pointer]:
+          - /url: /v1/skiper15
+          - generic [ref=e95]: 15 Box loading preloader
+        - link "16 Card stack scroll" [ref=e98] [cursor=pointer]:
+          - /url: /v1/skiper16
+          - generic [ref=e100]: 16 Card stack scroll
+        - link "17 Card stack with gsap and rotate" [ref=e103] [cursor=pointer]:
+          - /url: /v1/skiper17
+          - generic [ref=e105]: 17 Card stack with gsap and rotate
+        - link "18 Image cursor trail" [ref=e108] [cursor=pointer]:
+          - /url: /v1/skiper18
+          - generic [ref=e110]: 18 Image cursor trail
+        - link "19 Svg follow scroll" [ref=e113] [cursor=pointer]:
+          - /url: /v1/skiper19
+          - generic [ref=e115]: 19 Svg follow scroll
+        - link "20 UniSwap Country Dialog" [ref=e118] [cursor=pointer]:
+          - /url: /v1/skiper20
+          - generic [ref=e120]: 20 UniSwap Country Dialog
+        - link "21 Family wallet" [ref=e123] [cursor=pointer]:
+          - /url: /v1/skiper21
+          - generic [ref=e125]: 21 Family wallet
+        - link "22 Aave token swap" [ref=e128] [cursor=pointer]:
+          - /url: /v1/skiper22
+          - generic [ref=e130]: 22 Aave token swap
+        - link "23 Minimal Card Expand" [ref=e133] [cursor=pointer]:
+          - /url: /v1/skiper23
+          - generic [ref=e135]: 23 Minimal Card Expand
+        - link "24 Tik tik color list" [ref=e138] [cursor=pointer]:
+          - /url: /v1/skiper24
+          - generic [ref=e140]: 24 Tik tik color list
+        - link "25 Music toggle btn" [ref=e143] [cursor=pointer]:
+          - /url: /v1/skiper25
+          - generic [ref=e145]: 25 Music toggle btn
+        - link "26 Theme toggle btn" [ref=e148] [cursor=pointer]:
+          - /url: /v1/skiper26
+          - generic [ref=e150]: 26 Theme toggle btn
+        - link "27 Rolling text" [ref=e153] [cursor=pointer]:
+          - /url: /v1/skiper27
+          - generic [ref=e155]: 27 Rolling text
+        - link "28 3D perspective text" [ref=e158] [cursor=pointer]:
+          - /url: /v1/skiper28
+          - generic [ref=e160]: 28 3D perspective text
+        - link "29 Siena parallax" [ref=e163] [cursor=pointer]:
+          - /url: /v1/skiper29
+          - generic [ref=e165]: 29 Siena parallax
+        - link "30 Oliver parallax" [ref=e168] [cursor=pointer]:
+          - /url: /v1/skiper30
+          - generic [ref=e170]: 30 Oliver parallax
+        - link "31 Text Scroll animation" [ref=e173] [cursor=pointer]:
+          - /url: /v1/skiper31
+          - generic [ref=e175]: 31 Text Scroll animation
+        - link "32 Scroll images reveal 001" [ref=e178] [cursor=pointer]:
+          - /url: /v1/skiper32
+          - generic [ref=e180]: 32 Scroll images reveal 001
+        - link "33 Scroll images reveal 002" [ref=e183] [cursor=pointer]:
+          - /url: /v1/skiper33
+          - generic [ref=e185]: 33 Scroll images reveal 002
+        - link "34 Scroll images reveal 003" [ref=e188] [cursor=pointer]:
+          - /url: /v1/skiper34
+          - generic [ref=e190]: 34 Scroll images reveal 003
+        - link "35 Hover expand" [ref=e193] [cursor=pointer]:
+          - /url: /v1/skiper35
+          - generic [ref=e195]: 35 Hover expand
+        - link "36 Interactive3d Hero" [ref=e198] [cursor=pointer]:
+          - /url: /v1/skiper36
+          - generic [ref=e200]: 36 Interactive3d Hero
+        - link "37 Animated number" [ref=e203] [cursor=pointer]:
+          - /url: /v1/skiper37
+          - generic [ref=e205]: 37 Animated number
+        - link "38 Apple Navbar V001" [ref=e208] [cursor=pointer]:
+          - /url: /v1/skiper38
+          - generic [ref=e210]: 38 Apple Navbar V001
+        - link "39 Canvas crowd" [ref=e213] [cursor=pointer]:
+          - /url: /v1/skiper39
+          - generic [ref=e215]: 39 Canvas crowd
+        - link "40 CssLink" [ref=e218] [cursor=pointer]:
+          - /url: /v1/skiper40
+          - generic [ref=e220]: 40 CssLink
+        - link "41 Progressive Blur" [ref=e223] [cursor=pointer]:
+          - /url: /v1/skiper41
+          - generic [ref=e225]: 41 Progressive Blur
+        - link "42 Animated icons 001" [ref=e228] [cursor=pointer]:
+          - /url: /v1/skiper42
+          - generic [ref=e230]: 42 Animated icons 001
+        - link "43 Vercel Tooltip" [ref=e233] [cursor=pointer]:
+          - /url: /v1/skiper43
+          - generic [ref=e235]: 43 Vercel Tooltip
+        - link "44 Vercel scroll with blur" [ref=e238] [cursor=pointer]:
+          - /url: /v1/skiper44
+          - generic [ref=e240]: 44 Vercel scroll with blur
+        - link "45 Family Receive button" [ref=e243] [cursor=pointer]:
+          - /url: /v1/skiper45
+          - generic [ref=e245]: 45 Family Receive button
+        - link "46 Nextjs gooey menu" [ref=e248] [cursor=pointer]:
+          - /url: /v1/skiper46
+          - generic [ref=e250]: 46 Nextjs gooey menu
+        - link "47 Perspective carousel" [ref=e253] [cursor=pointer]:
+          - /url: /v1/skiper47
+          - generic [ref=e255]: 47 Perspective carousel
+        - link "48 Card swipe carousel" [ref=e258] [cursor=pointer]:
+          - /url: /v1/skiper48
+          - generic [ref=e260]: 48 Card swipe carousel
+        - link "49 Inverted perspective carousel" [ref=e263] [cursor=pointer]:
+          - /url: /v1/skiper49
+          - generic [ref=e265]: 49 Inverted perspective carousel
+        - link "50 Creative carousel 001" [ref=e268] [cursor=pointer]:
+          - /url: /v1/skiper50
+          - generic [ref=e270]: 50 Creative carousel 001
+        - link "51 Creative carousel 002" [ref=e273] [cursor=pointer]:
+          - /url: /v1/skiper51
+          - generic [ref=e275]: 51 Creative carousel 002
+        - link "52 ExpandOnHover" [ref=e278] [cursor=pointer]:
+          - /url: /v1/skiper52
+          - generic [ref=e280]: 52 ExpandOnHover
+        - link "53 ExpandOnHover vertical" [ref=e283] [cursor=pointer]:
+          - /url: /v1/skiper53
+          - generic [ref=e285]: 53 ExpandOnHover vertical
+        - link "54 Shadcn clipPath Carousal" [ref=e288] [cursor=pointer]:
+          - /url: /v1/skiper54
+          - generic [ref=e290]: 54 Shadcn clipPath Carousal
+        - link "55 Parallax Image" [ref=e293] [cursor=pointer]:
+          - /url: /v1/skiper55
+          - generic [ref=e295]: 55 Parallax Image
+        - link "56 Devouring details sign in" [ref=e298] [cursor=pointer]:
+          - /url: /v1/skiper56
+          - generic [ref=e300]: 56 Devouring details sign in
+        - link "57 Vercel navigation bar" [ref=e303] [cursor=pointer]:
+          - /url: /v1/skiper57
+          - generic [ref=e305]: 57 Vercel navigation bar
+        - link "58 Text roll navigation" [ref=e308] [cursor=pointer]:
+          - /url: /v1/skiper58
+          - generic [ref=e310]: 58 Text roll navigation
+        - link "59 Drawing cursor effect" [ref=e313] [cursor=pointer]:
+          - /url: /v1/skiper59
+          - generic [ref=e315]: 59 Drawing cursor effect
+        - link "60 Side Scroll Navigation" [ref=e318] [cursor=pointer]:
+          - /url: /v1/skiper60
+          - generic [ref=e320]: 60 Side Scroll Navigation
+        - link "61 Mouse follow animations" [ref=e323] [cursor=pointer]:
+          - /url: /v1/skiper61
+          - generic [ref=e325]: 61 Mouse follow animations
+        - link "62 Loop animation hook" [ref=e328] [cursor=pointer]:
+          - /url: /v1/skiper62
+          - generic [ref=e330]: 62 Loop animation hook
+        - link "63 Apple squicircle effect" [ref=e333] [cursor=pointer]:
+          - /url: /v1/skiper63
+          - generic [ref=e335]: 63 Apple squicircle effect
+        - link "64 Gooey Effect" [ref=e338] [cursor=pointer]:
+          - /url: /v1/skiper64
+          - generic [ref=e340]: 64 Gooey Effect
+        - link "65 Breakpoint indicator" [ref=e343] [cursor=pointer]:
+          - /url: /v1/skiper65
+          - generic [ref=e345]: 65 Breakpoint indicator
+        - link "66 SVG clip path mask" [ref=e348] [cursor=pointer]:
+          - /url: /v1/skiper66
+          - generic [ref=e350]: 66 SVG clip path mask
+        - link "67 Video player 001" [ref=e353] [cursor=pointer]:
+          - /url: /v1/skiper67
+          - generic [ref=e355]: 67 Video player 001
+        - link "68 Animated number input" [ref=e358] [cursor=pointer]:
+          - /url: /v1/skiper68
+          - generic [ref=e360]: 68 Animated number input
+        - link "69 Skiper Number flow" [ref=e363] [cursor=pointer]:
+          - /url: /v1/skiper69
+          - generic [ref=e365]: 69 Skiper Number flow
+        - link "70 Text reveal box" [ref=e368] [cursor=pointer]:
+          - /url: /v1/skiper70
+          - generic [ref=e370]: 70 Text reveal box
+        - link "71 Image reveal" [ref=e373] [cursor=pointer]:
+          - /url: /v1/skiper71
+          - generic [ref=e375]: 71 Image reveal
+        - link "72 Horizontal Text reveal" [ref=e378] [cursor=pointer]:
+          - /url: /v1/skiper72
+          - generic [ref=e380]: 72 Horizontal Text reveal
+        - link "73 Infinite canvas" [ref=e383] [cursor=pointer]:
+          - /url: /v1/skiper73
+          - generic [ref=e385]: 73 Infinite canvas
+        - link "74 Timeline calendar" [ref=e388] [cursor=pointer]:
+          - /url: /v1/skiper74
+          - generic [ref=e390]: 74 Timeline calendar
+        - link "75 Apple Navbar V002" [ref=e393] [cursor=pointer]:
+          - /url: /v1/skiper75
+          - generic [ref=e395]: 75 Apple Navbar V002
+        - link "76 Apple Feature Block" [ref=e398] [cursor=pointer]:
+          - /url: /v1/skiper76
+          - generic [ref=e400]: 76 Apple Feature Block
+        - link "77 Apple carousel" [ref=e403] [cursor=pointer]:
+          - /url: /v1/skiper77
+          - generic [ref=e405]: 77 Apple carousel
+        - link "78 Dia Browser's Carousal" [ref=e408] [cursor=pointer]:
+          - /url: /v1/skiper78
+          - generic [ref=e410]: 78 Dia Browser's Carousal
+        - link "79 Team showcase scroll" [ref=e413] [cursor=pointer]:
+          - /url: /v1/skiper79
+          - generic [ref=e415]: 79 Team showcase scroll
+        - link "80 Projects Showcase" [ref=e418] [cursor=pointer]:
+          - /url: /v1/skiper80
+          - generic [ref=e420]: 80 Projects Showcase
+        - link "81 AI Input 001" [ref=e423] [cursor=pointer]:
+          - /url: /v1/skiper81
+          - generic [ref=e425]: 81 AI Input 001
+        - link "82 AI Input 002" [ref=e428] [cursor=pointer]:
+          - /url: /v1/skiper82
+          - generic [ref=e430]: 82 AI Input 002
+        - link "83 AI Input 003" [ref=e433] [cursor=pointer]:
+          - /url: /v1/skiper83
+          - generic [ref=e435]: 83 AI Input 003
+        - link "84 AI Input 004" [ref=e438] [cursor=pointer]:
+          - /url: /v1/skiper84
+          - generic [ref=e440]: 84 AI Input 004
+        - link "85 AI Input 005" [ref=e443] [cursor=pointer]:
+          - /url: /v1/skiper85
+          - generic [ref=e445]: 85 AI Input 005
+        - link "86 Apple Ai gradient" [ref=e448] [cursor=pointer]:
+          - /url: /v1/skiper86
+          - generic [ref=e450]: 86 Apple Ai gradient
+        - link "87 Scroll with fade effect" [ref=e453] [cursor=pointer]:
+          - /url: /v1/skiper87
+          - generic [ref=e455]: 87 Scroll with fade effect
+        - link "88 3D Rolling Text on scroll New" [ref=e458] [cursor=pointer]:
+          - /url: /v1/skiper88
+          - generic [ref=e460]:
+            - text: 88 3D Rolling Text on scroll
+            - superscript [ref=e461]: New
+        - link "89 Scroll progress 001 New" [ref=e464] [cursor=pointer]:
+          - /url: /v1/skiper89
+          - generic [ref=e466]:
+            - text: 89 Scroll progress 001
+            - superscript [ref=e467]: New
+        - link "90 Gradient hover cards New" [ref=e470] [cursor=pointer]:
+          - /url: /v1/skiper90
+          - generic [ref=e472]:
+            - text: 90 Gradient hover cards
+            - superscript [ref=e473]: New
+        - link "91 video player 002 New" [ref=e476] [cursor=pointer]:
+          - /url: /v1/skiper91
+          - generic [ref=e478]:
+            - text: 91 video player 002
+            - superscript [ref=e479]: New
+        - link "92 Vercel Command Search New" [ref=e482] [cursor=pointer]:
+          - /url: /v1/skiper92
+          - generic [ref=e484]:
+            - text: 92 Vercel Command Search
+            - superscript [ref=e485]: New
+        - link "94 Scroll progress 002 New" [ref=e488] [cursor=pointer]:
+          - /url: /v1/skiper94
+          - generic [ref=e490]:
+            - text: 94 Scroll progress 002
+            - superscript [ref=e491]: New
+        - link "95 Scroll progress 003 New" [ref=e494] [cursor=pointer]:
+          - /url: /v1/skiper95
+          - generic [ref=e496]:
+            - text: 95 Scroll progress 003
+            - superscript [ref=e497]: New
+        - link "96 Expandable tabs navigation New" [ref=e500] [cursor=pointer]:
+          - /url: /v1/skiper96
+          - generic [ref=e502]:
+            - text: 96 Expandable tabs navigation
+            - superscript [ref=e503]: New
+        - link "97 video player 003 New" [ref=e506] [cursor=pointer]:
+          - /url: /v1/skiper97
+          - generic [ref=e508]:
+            - text: 97 video player 003
+            - superscript [ref=e509]: New
+        - link "98 Vertical tooltip menu New" [ref=e512] [cursor=pointer]:
+          - /url: /v1/skiper98
+          - generic [ref=e514]:
+            - text: 98 Vertical tooltip menu
+            - superscript [ref=e515]: New
+        - link "99 Animated icons 002 New" [ref=e518] [cursor=pointer]:
+          - /url: /v1/skiper99
+          - generic [ref=e520]:
+            - text: 99 Animated icons 002
+            - superscript [ref=e521]: New
+        - link "100 Draggable snap button New" [ref=e524] [cursor=pointer]:
+          - /url: /v1/skiper100
+          - generic [ref=e526]:
+            - text: 100 Draggable snap button
+            - superscript [ref=e527]: New
+        - link "101 Custom tooltip New" [ref=e530] [cursor=pointer]:
+          - /url: /v1/skiper101
+          - generic [ref=e532]:
+            - text: 101 Custom tooltip
+            - superscript [ref=e533]: New
+        - link "102 Debug Pannel New" [ref=e536] [cursor=pointer]:
+          - /url: /v1/skiper102
+          - generic [ref=e538]:
+            - text: 102 Debug Pannel
+            - superscript [ref=e539]: New
+        - link "103 Bouncy accordion New" [ref=e542] [cursor=pointer]:
+          - /url: /v1/skiper103
+          - generic [ref=e544]:
+            - text: 103 Bouncy accordion
+            - superscript [ref=e545]: New
+        - link "104 Scroll reveal grid cards New" [ref=e548] [cursor=pointer]:
+          - /url: /v1/skiper104
+          - generic [ref=e550]:
+            - text: 104 Scroll reveal grid cards
+            - superscript [ref=e551]: New
+  - generic [ref=e553]:
+    - generic [ref=e554]:
+      - button "Command + K" [ref=e555] [cursor=pointer]:
+        - img [ref=e557]
+        - generic [ref=e559]: Command + K
+      - generic [ref=e560]:
+        - heading "Command Palette" [level=2] [ref=e561]
+        - paragraph [ref=e562]: Search for a command to run...
+    - generic [ref=e565]:
+      - generic [ref=e567]: Scroll below to see effect
+      - generic [ref=e570]:
+        - generic [ref=e571]:
+          - generic: "1"
+          - generic [ref=e573]:
+            - heading "First ever to do that" [level=2] [ref=e574]
+            - paragraph [ref=e575]: We are the first one ever to do this shit bla bla bla trust in us we got some decent funding tooo bla bla
+        - generic [ref=e576]:
+          - generic: "2"
+          - generic [ref=e578]:
+            - heading "Revolutionary approach" [level=2] [ref=e579]
+            - paragraph [ref=e580]: Our innovative solution transforms the way you think about design and development, bringing cutting-edge technology to your fingertips.
+        - generic [ref=e581]:
+          - generic: "3"
+          - generic [ref=e583]:
+            - heading "Next level experience" [level=2] [ref=e584]
+            - paragraph [ref=e585]: Experience the future of user interfaces with our advanced features and seamless integration capabilities that elevate your projects.
+  - region "Notifications alt+T"
+  - alert [ref=e586]

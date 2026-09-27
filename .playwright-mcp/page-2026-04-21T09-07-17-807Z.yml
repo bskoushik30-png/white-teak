@@ -1,0 +1,225 @@
+- generic [ref=e3]:
+  - region "top of page"
+  - generic [ref=e10]:
+    - generic:
+      - generic:
+        - banner:
+          - generic [ref=e15]:
+            - generic:
+              - navigation "Site" [ref=e18]:
+                - list [ref=e19]:
+                  - listitem [ref=e20]:
+                    - link "Home" [ref=e22] [cursor=pointer]:
+                      - /url: https://www.whiteteakroasters.com
+                      - generic [ref=e24]: Home
+                  - listitem [ref=e25]:
+                    - link "Contact Us" [ref=e27] [cursor=pointer]:
+                      - /url: https://www.whiteteakroasters.com
+                      - generic [ref=e29]: Contact Us
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                  - generic:
+                    - generic:
+                      - img
+              - heading "WHITE TEAK COFFEE ROASTERS®️" [level=6] [ref=e31]:
+                - generic [ref=e32]: WHITE TEAK COFFEE ROASTERS®️
+      - main:
+        - generic [ref=e37]:
+          - generic:
+            - generic [ref=e43]:
+              - generic [ref=e45]:
+                - heading "Where Coffee and Cuisine harmonize with beauty of nature" [level=1] [ref=e48]
+                - generic [ref=e49]:
+                  - paragraph [ref=e50]: Discover White Teak Coffe Roasters, a haven where the art of specialty coffee and the craft of delectable food unite weaving tapestry of an unforgettable
+                  - paragraph [ref=e51]: all-day cafe cafe experience
+                  - paragraph [ref=e52]
+              - link "Explore Today" [ref=e54] [cursor=pointer]:
+                - /url: https://www.google.com/maps/dir//D13%2FB,+Gokulam+Main+Rd,+Vani+Vilas+Mohalla,+Mysuru,+Karnataka+570002/@12.3282263,76.5461313,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3baf7b6d8a3f990f:0xab0db788a2ac2962!2m2!1d76.6285332!2d12.3282387?entry=ttu
+                - generic [ref=e55]: Explore Today
+            - generic [ref=e56]:
+              - generic:
+                - generic [ref=e58] [cursor=pointer]:
+                  - button "2.mp4 Play video" [pressed] [ref=e59]
+                  - generic [ref=e66]:
+                    - img [ref=e68]
+                    - img [ref=e73]
+                  - button "Mute" [pressed] [ref=e76]:
+                    - img [ref=e78]
+                    - img [ref=e82]
+                - generic [ref=e85]:
+                  - heading "Crafted Food and Drinks" [level=4] [ref=e88]
+                  - heading "Each item on our menu is crafted with love and care" [level=4] [ref=e90]
+        - generic [ref=e97]:
+          - heading "Crafted Food and Drinks" [level=4] [ref=e100]
+          - heading "Each item on our menu is crafted with love and care" [level=4] [ref=e102]
+        - region [ref=e112]:
+          - generic [ref=e115]:
+            - generic "image"
+        - generic [ref=e133]:
+          - list:
+            - listitem [ref=e134]:
+              - link [ref=e137] [cursor=pointer]:
+                - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+              - heading "Coffee" [level=2] [ref=e142]:
+                - link "Coffee" [ref=e144] [cursor=pointer]:
+                  - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+            - listitem [ref=e145]:
+              - link [ref=e148] [cursor=pointer]:
+                - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+              - heading "Breakfast" [level=2] [ref=e153]:
+                - link "Breakfast" [ref=e154] [cursor=pointer]:
+                  - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+            - listitem [ref=e155]:
+              - link [ref=e158] [cursor=pointer]:
+                - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+              - heading "Desserts" [level=2] [ref=e163]:
+                - link "Desserts" [ref=e164] [cursor=pointer]:
+                  - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+            - listitem [ref=e165]:
+              - link [ref=e168] [cursor=pointer]:
+                - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+              - heading "Savoury" [level=2] [ref=e173]:
+                - link "Savoury" [ref=e174] [cursor=pointer]:
+                  - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+            - listitem [ref=e175]:
+              - link [ref=e178] [cursor=pointer]:
+                - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+              - heading "Beverages" [level=2] [ref=e183]:
+                - link "Beverages" [ref=e184] [cursor=pointer]:
+                  - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+        - generic [ref=e189]:
+          - heading "Nature's Embrace" [level=4] [ref=e192]
+          - 'heading "Escape to Serenity: A Dining Experience Enveloped in Nature''s Warmth" [level=4] [ref=e194]'
+        - region [ref=e205]:
+          - generic [ref=e207]:
+            - generic [ref=e208] [cursor=pointer]:
+              - button "image"
+            - generic [ref=e212] [cursor=pointer]:
+              - button
+            - generic [ref=e216] [cursor=pointer]:
+              - button
+        - generic [ref=e226]:
+          - generic [ref=e228]:
+            - paragraph [ref=e229]:
+              - generic [ref=e230]: Our Story
+            - paragraph [ref=e231]: "“Filtered with Love” : being the foundation for our All-day Cafe born out of a mutual love for specialty coffee and craft food."
+          - generic [ref=e232]:
+            - paragraph [ref=e233]:
+              - generic [ref=e235]: The Coffee
+            - paragraph [ref=e236]:
+              - generic [ref=e237]: Along with being our founding-planter, we have chosen to work in direct trade relationships at origin with coffee estates and smallholder farmers harvesting and processing coffees that we aim to curate into only SCA 85+ point scoring coffees.
+            - paragraph [ref=e238]
+            - paragraph [ref=e239]:
+              - generic [ref=e240]: We pride with our intentional introduction of White Teak “Cascara” (coffee cherry tea) which is the dried skin of coffee cherries which you can brew as you would any other specialty tea.
+          - generic [ref=e241]:
+            - paragraph [ref=e242]:
+              - generic [ref=e244]: The Teas
+            - paragraph [ref=e245]:
+              - generic [ref=e246]: We source teas direct from farmers and craft them into unique blends. We take pride in our sourcing. Our teas are crafted in small batches - We never compromise on freshness. We never choose flavors over health - 100% natural ingredients always.
+          - generic [ref=e247]:
+            - paragraph [ref=e248]:
+              - generic [ref=e250]: The Bakes
+            - paragraph [ref=e251]:
+              - generic [ref=e252]: We source teas direct from farmers and craft them into unique blends. We take pride in our sourcing. Our teas are crafted in small batches - We never compromise on freshness. We never choose flavors over health - 100% natural ingredients always.
+          - generic [ref=e253]:
+            - paragraph [ref=e254]:
+              - generic [ref=e256]: The Bakes
+            - paragraph [ref=e257]:
+              - generic [ref=e258]: We source teas direct from farmers and craft them into unique blends. We take pride in our sourcing. Our teas are crafted in small batches - We never compromise on freshness. We never choose flavors over health - 100% natural ingredients always.
+          - generic [ref=e259]:
+            - paragraph [ref=e260]:
+              - generic [ref=e262]: Home Brewing Experiences
+            - paragraph [ref=e263]:
+              - generic [ref=e264]: A curated collection of brewing equipment’s, ideal for coffee enthusiasts and novices alike.
+          - generic [ref=e265]:
+            - paragraph [ref=e266]:
+              - generic [ref=e268]: Events & Experiences
+            - paragraph [ref=e269]:
+              - generic [ref=e270]: The White Teak Ambience strives to showcase the Indian subcontinent at its peak for specialty coffee, craft bakes and innovative design. We bring together communities across the various walks of life, through specially curated events and experiences.
+            - paragraph [ref=e271]
+            - paragraph [ref=e272]:
+              - generic [ref=e273]: "We feel that an organic and natural extension of our philosophy to help spur an ecosystem to pair such deliciousness with other indigenous talent of the subcontinent that we feel strongly have not yet gotten their fair due: visual artists, designers, musicians, and social changemakers. We’re humbled by the sheer number of these folks producing world-class work in our region."
+          - paragraph [ref=e275]: "“Brewing Experiences” : The Food, Coffee, Teas and Ambience make for a great experience. White Teak will inspire you, on every occasion."
+        - generic [ref=e280]:
+          - heading "From Heart to Hands, Farm to Cup" [level=4] [ref=e283]
+          - heading "Our Coffee Farms Nestled in Nature's Embrace" [level=4] [ref=e285]
+          - region [ref=e292]:
+            - generic [ref=e294]:
+              - generic [ref=e295] [cursor=pointer]:
+                - button "image"
+              - generic [ref=e305] [cursor=pointer]:
+                - button
+              - generic [ref=e315] [cursor=pointer]:
+                - button
+        - generic [ref=e329]:
+          - list:
+            - listitem [ref=e330]:
+              - generic [ref=e332]:
+                - paragraph [ref=e335]: From Farm to Your Cup
+                - heading "Handpicked Specialty Coffee" [level=3] [ref=e337]
+                - img [ref=e340]
+            - listitem [ref=e344]:
+              - generic [ref=e346]:
+                - paragraph [ref=e349]: Explore our curated collection of brewing equipment
+                - heading "Brewing adventures" [level=3] [ref=e351]
+                - img [ref=e354]
+            - listitem [ref=e362]:
+              - generic [ref=e364]:
+                - paragraph [ref=e367]: A Perfect Harmony with Our Coffee
+                - heading "Freshly Baked Goodness" [level=3] [ref=e369]
+                - img [ref=e372]
+            - listitem [ref=e416]:
+              - generic [ref=e418]:
+                - paragraph [ref=e421]: Immerse yourself in the tranquility of nature at our cafe
+                - heading "Natural Oasis" [level=3] [ref=e423]
+                - img [ref=e426]
+        - generic [ref=e442]:
+          - generic:
+            - list "Social Bar" [ref=e445]:
+              - listitem [ref=e446]:
+                - link "Instagram" [ref=e447] [cursor=pointer]:
+                  - /url: https://www.instagram.com/whiteteakroasters/?hl=en
+              - listitem [ref=e449]:
+                - link "Facebook" [ref=e450] [cursor=pointer]:
+                  - /url: https://www.facebook.com/whiteteakroasters/
+            - generic [ref=e452]:
+              - paragraph [ref=e453]: Order Now
+              - paragraph [ref=e454]: Swiggy
+              - paragraph [ref=e455]: Zomato
+            - generic [ref=e456]:
+              - paragraph [ref=e457]: Find your way here
+              - paragraph [ref=e458]:
+                - link "Everyday:" [ref=e460] [cursor=pointer]:
+                  - /url: https://wa.me/919154990266?text=
+              - paragraph [ref=e461]:
+                - link "8:30 am to 11 pm" [ref=e463] [cursor=pointer]:
+                  - /url: https://wa.me/919154990266?text=
+              - paragraph [ref=e464]: D13/B, Gokulam Main Rd, Vani Vilas Mohalla, Mysuru, Karnataka 570002
+            - img [ref=e467]
+            - generic [ref=e470]:
+              - paragraph [ref=e471]: Contact Us
+              - paragraph [ref=e472]: "Whatsapp:"
+              - paragraph [ref=e473]: "+919731999040"
+              - paragraph [ref=e474]:
+                - link "whiteteak.social@gmail.com" [ref=e476] [cursor=pointer]:
+                  - /url: mailto:whiteteak.social@gmail.com
+            - img [ref=e479]
+            - generic [ref=e483]:
+              - paragraph [ref=e484]: Order Now
+              - paragraph [ref=e485]:
+                - link "Direct" [ref=e487] [cursor=pointer]:
+                  - /url: https://whiteteak.dotpe.in/catalog/499195/568418
+              - paragraph [ref=e488]:
+                - link "Zomato" [ref=e490] [cursor=pointer]:
+                  - /url: https://www.zomato.com/mysore/white-teak-coffee-roasters-gokulam
+              - paragraph [ref=e491]:
+                - link "Swiggy" [ref=e493] [cursor=pointer]:
+                  - /url: https://www.swiggy.com/restaurants/white-teak-coffee-roasters-gokulam-main-road-mysore-north-mysore-715606
+            - img [ref=e496]
+        - generic [ref=e499]:
+          - paragraph [ref=e504]: ©Copyright 2024. White Teak Coffee Roasters. All Rights Reserved.
+          - heading "WHITE TEAK COFFEE ROASTERS®️" [level=6] [ref=e506]:
+            - generic [ref=e507]: WHITE TEAK COFFEE ROASTERS®️
+  - region "bottom of page"
