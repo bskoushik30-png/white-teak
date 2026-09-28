@@ -107,6 +107,28 @@ export async function deleteAllReels() {
   }
 }
 
+export async function deleteMediaItem(sectionKey: string, itemKey: string) {
+  try {
+    const supabase = await createClient();
+    const { error } = await supabase
+      .from("section_media")
+      .delete()
+      .eq("section_key", sectionKey)
+      .eq("item_key", itemKey);
+
+    if (error) {
+      return { success: false, error: error.message };
+    }
+
+    revalidatePath("/");
+    revalidatePath("/admin");
+    return { success: true };
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Failed to delete item";
+    return { success: false, error: message };
+  }
+}
+
 /**
  * Automatically scrapes Instagram Reel cover image, caption, title, and likes directly from the Reel link,
  * and uploads the cover image to Supabase Storage for reliable hosting.

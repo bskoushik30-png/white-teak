@@ -135,6 +135,10 @@ export const DEFAULT_SECTION_MEDIA: Record<string, SectionMediaItem[]> = {
       subtitle: "7 AM – 11 PM",
       image_url: "/locations/wtcr_gokulam.webp",
       display_order: 1,
+      metadata: {
+        mapUrl: "https://maps.app.goo.gl/moxAK2FQvw7uPfEv7",
+        isComingSoon: false,
+      },
     },
     {
       section_key: "locations",
@@ -143,6 +147,10 @@ export const DEFAULT_SECTION_MEDIA: Record<string, SectionMediaItem[]> = {
       subtitle: "11 AM – 9 PM",
       image_url: "/locations/kavi_mane.webp",
       display_order: 2,
+      metadata: {
+        mapUrl: "https://maps.app.goo.gl/WfUXMxy5b121QkMu5",
+        isComingSoon: false,
+      },
     },
     {
       section_key: "locations",
@@ -151,6 +159,10 @@ export const DEFAULT_SECTION_MEDIA: Record<string, SectionMediaItem[]> = {
       subtitle: "7 AM – Midnight",
       image_url: "/locations/sainikpuri.webp",
       display_order: 3,
+      metadata: {
+        mapUrl: "https://maps.app.goo.gl/yZ2Ra8chnnLyr1QL8",
+        isComingSoon: false,
+      },
     },
     {
       section_key: "locations",
@@ -159,6 +171,10 @@ export const DEFAULT_SECTION_MEDIA: Record<string, SectionMediaItem[]> = {
       subtitle: "Brewing Soon",
       image_url: "",
       display_order: 4,
+      metadata: {
+        mapUrl: "#",
+        isComingSoon: true,
+      },
     },
   ],
   reels: [],

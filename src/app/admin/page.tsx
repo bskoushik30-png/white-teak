@@ -10,6 +10,7 @@ import {
   uploadMediaImage,
   resetMediaItemToDefault,
   deleteAllReels,
+  deleteMediaItem,
   fetchInstagramReelMetadata,
   getAdminStats,
   getSubscribersList,
@@ -26,7 +27,7 @@ const SECTIONS = [
   { key: "farm", label: "Farm & Origin", icon: "🌾", count: 3 },
   { key: "feature_cards", label: "Feature Cards", icon: "🎴", count: 4 },
   { key: "categories", label: "Categories", icon: "🗂️", count: 5 },
-  { key: "locations", label: "Locations", icon: "📍", count: 4 },
+  { key: "locations", label: "Locations", icon: "📍", count: null },
   { key: "reels", label: "Instagram Reels", icon: "🎬", count: null },
   { key: "leads", label: "Leads & Subscribers", icon: "📬", count: null },
 ];
@@ -261,6 +262,80 @@ export default function AdminPage() {
     showToast("New Reel created! Paste your link, upload video or cover, and click 'Save Changes'.");
   };
 
+  const handleDeleteReel = async (itemKey: string) => {
+    if (!confirm("Delete this reel?")) return;
+
+    setSavingKey(itemKey);
+    try {
+      const res = await deleteMediaItem("reels", itemKey);
+      if (res.success) {
+        setMediaData((prev) => ({
+          ...prev,
+          reels: (prev.reels || []).filter((x) => x.item_key !== itemKey),
+        }));
+        showToast("Reel deleted successfully!");
+      } else {
+        alert(res.error || "Failed to delete reel");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error deleting reel");
+    } finally {
+      setSavingKey(null);
+    }
+  };
+
+  const handleAddNewLocation = () => {
+    const currentList = mediaData.locations || DEFAULT_SECTION_MEDIA.locations || [];
+    const newIndex = currentList.length + 1;
+    const newLocation: SectionMediaItem = {
+      section_key: "locations",
+      item_key: `loc_${Date.now()}`,
+      title: "",
+      subtitle: "7 AM – 11 PM",
+      image_url: "",
+      display_order: newIndex,
+      metadata: {
+        mapUrl: "",
+        isComingSoon: false,
+      },
+    };
+
+    setMediaData((prev) => ({
+      ...prev,
+      locations: [...(prev.locations || DEFAULT_SECTION_MEDIA.locations || []), newLocation],
+    }));
+
+    showToast(
+      "New Location added! Enter the branch name, hours, Google Maps link, upload photo, and click 'Save Changes'."
+    );
+  };
+
+  const handleDeleteLocation = async (itemKey: string) => {
+    if (!confirm("Are you sure you want to delete this location?")) return;
+
+    setSavingKey(itemKey);
+    try {
+      const res = await deleteMediaItem("locations", itemKey);
+      if (res.success) {
+        setMediaData((prev) => ({
+          ...prev,
+          locations: (prev.locations || DEFAULT_SECTION_MEDIA.locations || []).filter(
+            (x) => x.item_key !== itemKey
+          ),
+        }));
+        showToast("Location deleted successfully!");
+      } else {
+        alert(res.error || "Failed to delete location");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error deleting location");
+    } finally {
+      setSavingKey(null);
+    }
+  };
+
   const handleDeleteAllReels = async () => {
     if (
       !confirm(
@@ -338,28 +413,6 @@ export default function AdminPage() {
     }
   };
 
-  const handleDeleteReel = async (itemKey: string) => {
-    if (!confirm("Are you sure you want to delete this Reel?")) return;
-
-    try {
-      const supabase = createClient();
-      await supabase
-        .from("section_media")
-        .delete()
-        .eq("section_key", "reels")
-        .eq("item_key", itemKey);
-
-      setMediaData((prev) => ({
-        ...prev,
-        reels: (prev.reels || []).filter((x) => x.item_key !== itemKey),
-      }));
-
-      showToast("Reel deleted successfully.");
-    } catch (err) {
-      console.error(err);
-      alert("Error deleting reel");
-    }
-  };
 
   const handleFileUpload = async (
     sectionKey: string,
@@ -659,7 +712,11 @@ export default function AdminPage() {
                         : "bg-white/10 text-white/60"
                     }`}
                   >
-                    {tab.key === "reels" ? mediaData.reels?.length || 6 : tab.count}
+                    {tab.key === "reels"
+                      ? mediaData.reels?.length || 0
+                      : tab.key === "locations"
+                      ? mediaData.locations?.length || 4
+                      : tab.count}
                   </span>
                 )}
               </button>
@@ -738,7 +795,9 @@ export default function AdminPage() {
                 </h2>
                 <p className="text-xs text-white/50">
                   {activeTab === "reels"
-                    ? "Upload reel videos (.mp4/.mov). The cover thumbnail is automatically captured from the video frame if no custom cover is uploaded!"
+                    ? "Upload reel videos (.mp4/.mov) or paste reel links. Cover thumbnail is auto-fetched or captured!"
+                    : activeTab === "locations"
+                    ? "Add and manage cafe branches, operating hours, Google Maps directions, and location photos. Changes update live immediately upon saving."
                     : "Upload photos from your computer or paste image links. Changes take effect on the live website immediately upon saving."}
                 </p>
               </div>
@@ -762,6 +821,15 @@ export default function AdminPage() {
                     <span>Add New Reel</span>
                   </button>
                 )}
+                {activeTab === "locations" && (
+                  <button
+                    onClick={handleAddNewLocation}
+                    className="flex items-center gap-2 rounded-xl bg-[#c8d96a] px-4 py-2.5 text-xs font-semibold text-[#110b07] shadow-lg shadow-[#c8d96a]/20 hover:bg-[#d8e878] transition"
+                  >
+                    <span>+</span>
+                    <span>Add New Location</span>
+                  </button>
+                )}
                 <span className="text-xs text-white/40">
                   {currentItems.length} items
                 </span>
@@ -781,7 +849,7 @@ export default function AdminPage() {
                   </div>
                   <h3 className="font-display text-lg text-[#f3ecdf]">No Reels Added Yet</h3>
                   <p className="mx-auto mt-2 max-w-md text-xs text-white/60">
-                    All previous dummy links are removed. You can now add your own Instagram reels one by one! Paste your Instagram reel link, upload your video (cover is auto-captured), and click Save.
+                    All previous dummy links are removed. You can now add your own Instagram reels one by one! Paste your Instagram reel link and click Save.
                   </p>
                   <button
                     onClick={handleAddNewReel}
@@ -789,6 +857,23 @@ export default function AdminPage() {
                   >
                     <span>+</span>
                     <span>Add Your First Reel</span>
+                  </button>
+                </div>
+              ) : activeTab === "locations" ? (
+                <div className="rounded-2xl border border-dashed border-[#c8d96a]/30 bg-[#160e0a]/60 p-12 text-center">
+                  <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c8d96a]/15 text-2xl border border-[#c8d96a]/30">
+                    📍
+                  </div>
+                  <h3 className="font-display text-lg text-[#f3ecdf]">No Locations Configured</h3>
+                  <p className="mx-auto mt-2 max-w-md text-xs text-white/60">
+                    Add cafe branch locations, opening hours, Google Maps directions, and store photos.
+                  </p>
+                  <button
+                    onClick={handleAddNewLocation}
+                    className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#c8d96a] px-6 py-3 text-xs font-semibold text-[#110b07] shadow-lg shadow-[#c8d96a]/20 hover:bg-[#d8e878] transition"
+                  >
+                    <span>+</span>
+                    <span>Add Your First Location</span>
                   </button>
                 </div>
               ) : (
@@ -802,6 +887,7 @@ export default function AdminPage() {
                   const isSaving = savingKey === item.item_key;
                   const isUploading = uploadingKey === item.item_key;
                   const isReel = item.section_key === "reels";
+                  const isLocation = item.section_key === "locations";
                   const meta = (item.metadata || {}) as Record<string, string>;
                   const hasVideo = Boolean(meta.videoUrl);
 
@@ -838,7 +924,14 @@ export default function AdminPage() {
                           />
                         ) : (
                           <div className="flex h-full w-full flex-col items-center justify-center p-6 text-center text-xs text-white/40">
-                            <span>No image assigned</span>
+                            {isLocation && Boolean(meta.isComingSoon) ? (
+                              <div className="flex flex-col items-center">
+                                <span className="text-2xl mb-1">☕</span>
+                                <span className="text-[#c8d96a] font-semibold">Brewing Soon</span>
+                              </div>
+                            ) : (
+                              <span>No image assigned</span>
+                            )}
                           </div>
                         )}
 
@@ -850,6 +943,11 @@ export default function AdminPage() {
                           {hasVideo && (
                             <span className="rounded-lg bg-[#c8d96a]/20 border border-[#c8d96a]/40 px-2 py-0.5 text-[10px] font-medium text-[#c8d96a] backdrop-blur">
                               🎬 Video Attached
+                            </span>
+                          )}
+                          {isLocation && Boolean(meta.isComingSoon) && (
+                            <span className="rounded-lg bg-[#c8d96a]/20 border border-[#c8d96a]/40 px-2 py-0.5 text-[10px] font-medium text-[#c8d96a] backdrop-blur">
+                              ☕ Coming Soon
                             </span>
                           )}
                         </div>
@@ -892,7 +990,11 @@ export default function AdminPage() {
                           {/* Title / Heading */}
                           <div>
                             <label className="block text-[11px] uppercase tracking-wider text-white/50 mb-1">
-                              {isReel ? "Reel Headline / Title" : "Title / Name"}
+                              {isReel
+                                ? "Reel Headline / Title"
+                                : isLocation
+                                ? "Branch / Location Name"
+                                : "Title / Name"}
                             </label>
                             <input
                               type="text"
@@ -905,7 +1007,13 @@ export default function AdminPage() {
                                   e.target.value
                                 )
                               }
-                              placeholder={isReel ? "e.g. Pour Over Ritual" : "Title"}
+                              placeholder={
+                                isLocation
+                                  ? "e.g. Indiranagar, Bengaluru"
+                                  : isReel
+                                  ? "e.g. Pour Over Ritual"
+                                  : "Title"
+                              }
                               className="w-full rounded-xl border border-white/10 bg-black/40 px-3.5 py-2 text-xs text-[#f3ecdf] placeholder:text-white/20 focus:border-[#c8d96a] focus:outline-none"
                             />
                           </div>
@@ -913,7 +1021,11 @@ export default function AdminPage() {
                           {/* Subtitle / Caption */}
                           <div>
                             <label className="block text-[11px] uppercase tracking-wider text-white/50 mb-1">
-                              {isReel ? "Instagram Caption" : "Subtitle / Description"}
+                              {isReel
+                                ? "Instagram Caption"
+                                : isLocation
+                                ? "Operating Hours / Status"
+                                : "Subtitle / Description"}
                             </label>
                             <input
                               type="text"
@@ -927,13 +1039,80 @@ export default function AdminPage() {
                                 )
                               }
                               placeholder={
-                                isReel
+                                isLocation
+                                  ? "e.g. 7 AM – 11 PM or Brewing Soon"
+                                  : isReel
                                   ? "e.g. Crafted with our SCA 85+ single origin beans... ☕"
                                   : "Subtitle"
                               }
                               className="w-full rounded-xl border border-white/10 bg-black/40 px-3.5 py-2 text-xs text-[#f3ecdf] placeholder:text-white/20 focus:border-[#c8d96a] focus:outline-none"
                             />
                           </div>
+
+                          {/* Location Specific Fields: Maps Link, Coming Soon Toggle, Order */}
+                          {isLocation && (
+                            <div className="space-y-3 rounded-xl border border-[#c8d96a]/20 bg-[#120c08] p-3">
+                              {/* 1. Google Maps Directions Link */}
+                              <div>
+                                <label className="block text-[10px] uppercase tracking-wider text-white/60 mb-1">
+                                  🗺️ Google Maps Directions Link
+                                </label>
+                                <input
+                                  type="text"
+                                  value={meta.mapUrl || ""}
+                                  onChange={(e) =>
+                                    handleMetaChange(
+                                      item.section_key,
+                                      item.item_key,
+                                      "mapUrl",
+                                      e.target.value
+                                    )
+                                  }
+                                  placeholder="https://maps.app.goo.gl/..."
+                                  className="w-full rounded-xl border border-white/10 bg-black/40 px-3 py-2 text-[11px] font-mono text-white/90 placeholder:text-white/20 focus:border-[#c8d96a] focus:outline-none"
+                                />
+                              </div>
+
+                              {/* 2. Brewing Soon Checkbox & Order */}
+                              <div className="grid grid-cols-2 gap-2 items-center">
+                                <label className="flex items-center gap-2 cursor-pointer rounded-xl border border-white/10 bg-black/40 p-2 text-[11px] text-white/80 hover:border-white/20 transition">
+                                  <input
+                                    type="checkbox"
+                                    checked={Boolean(meta.isComingSoon)}
+                                    onChange={(e) =>
+                                      handleMetaChange(
+                                        item.section_key,
+                                        item.item_key,
+                                        "isComingSoon",
+                                        e.target.checked
+                                      )
+                                    }
+                                    className="h-4 w-4 rounded border-white/20 text-[#c8d96a] accent-[#c8d96a] focus:ring-0"
+                                  />
+                                  <span>☕ Brewing Soon</span>
+                                </label>
+
+                                <div>
+                                  <label className="block text-[10px] uppercase tracking-wider text-white/60 mb-0.5">
+                                    🔢 Order Position
+                                  </label>
+                                  <input
+                                    type="number"
+                                    value={item.display_order ?? (index + 1)}
+                                    onChange={(e) =>
+                                      handleFieldChange(
+                                        item.section_key,
+                                        item.item_key,
+                                        "display_order",
+                                        parseInt(e.target.value) || 0
+                                      )
+                                    }
+                                    className="w-full rounded-xl border border-white/10 bg-black/40 px-3 py-1.5 text-xs text-[#f3ecdf] focus:border-[#c8d96a] focus:outline-none"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          )}
 
                           {/* Reel Specific Fields: Video Upload with Auto-Thumbnail, Like Count & Link */}
                           {isReel && (
@@ -1054,7 +1233,6 @@ export default function AdminPage() {
                                         "permalink",
                                         val
                                       );
-                                      // If user pasted a full reel URL, auto-fetch after brief pause
                                       if (val.includes("instagram.com/reel/") || val.includes("instagram.com/p/")) {
                                         handleAutoFetchInstagram(item.item_key, val);
                                       }
@@ -1098,12 +1276,14 @@ export default function AdminPage() {
                             </div>
                           )}
 
-                          {/* Cover Photo Input (Custom or Auto-Captured) */}
+                          {/* Branch / Section Photo Input */}
                           <div>
                             <label className="flex items-center justify-between text-[11px] uppercase tracking-wider text-white/50 mb-1">
                               <span>
                                 {isReel
                                   ? "🖼️ Cover Photo (Auto-filled or Custom Override)"
+                                  : isLocation
+                                  ? "Branch Photo (Exterior/Interior)"
                                   : "Image URL / Storage Path"}
                               </span>
                             </label>
@@ -1119,7 +1299,7 @@ export default function AdminPage() {
                                     e.target.value
                                   )
                                 }
-                                placeholder="/assets/... or https://..."
+                                placeholder="/locations/... or https://..."
                                 className="flex-1 rounded-xl border border-white/10 bg-black/40 px-3 py-2 text-[11px] font-mono text-white/80 placeholder:text-white/20 focus:border-[#c8d96a] focus:outline-none"
                               />
 
@@ -1159,6 +1339,14 @@ export default function AdminPage() {
                               className="text-[11px] text-red-400/70 hover:text-red-300 transition"
                             >
                               🗑️ Delete Reel
+                            </button>
+                          ) : isLocation ? (
+                            <button
+                              type="button"
+                              onClick={() => handleDeleteLocation(item.item_key)}
+                              className="text-[11px] text-red-400/70 hover:text-red-300 transition"
+                            >
+                              🗑️ Delete Location
                             </button>
                           ) : (
                             <button
