@@ -729,12 +729,12 @@ export default function AdminPage() {
                 required
                 value={passcode}
                 onChange={(e) => setPasscode(e.target.value)}
-                placeholder="Enter passcode (e.g. whiteteak2026)"
+                placeholder="Enter admin passcode"
                 className="w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-[#f3ecdf] placeholder:text-white/20 focus:border-[#c8d96a] focus:outline-none focus:ring-1 focus:ring-[#c8d96a]"
               />
               {passcodeError && (
                 <p className="mt-2 text-xs text-red-400">
-                  Incorrect passcode. (Default: <code className="text-white">whiteteak2026</code>)
+                  Incorrect passcode. Please try again.
                 </p>
               )}
             </div>
