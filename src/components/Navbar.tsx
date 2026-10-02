@@ -7,7 +7,6 @@ import { NAV_LINKS, MENU_URL } from "@/lib/constants";
 const EXTENDED_LINKS = [
   { label: "Home", href: "/#hero" },
   { label: "Story", href: "/#story" },
-  { label: "Arrivals", href: "/arrivals" },
   { label: "Menu", href: MENU_URL, external: true },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "Locations", href: "/#locations" },
@@ -41,8 +40,6 @@ export default function Navbar() {
         style={{ transform: `scaleX(${progress})` }}
       />
 
-
-
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
@@ -69,113 +66,19 @@ export default function Navbar() {
 
             {/* Nav links — desktop */}
             <div className="hidden md:flex items-center gap-10">
-              {EXTENDED_LINKS.map((link) => {
-                const isArrivals = link.label === "Arrivals";
-                return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                    className={`group relative text-[13px] font-sans transition-colors tracking-[0.15em] uppercase ${
-                      isArrivals
-                        ? "font-bold text-white drop-shadow-[0_0_10px_rgba(255,203,45,0.8)] hover:text-[#FFCB2D]"
-                        : "font-medium text-white/75 hover:text-white"
-                    }`}
-                  >
-                    {isArrivals && (
-                      <span className="arrivals-cursor-wrap" aria-hidden="true">
-                        <svg
-                          className="arrivals-cursor"
-                          width="20"
-                          height="22"
-                          viewBox="0 0 20 22"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4 1L17.5 11.5L10.5 12.8L14 20L11.5 21L8 13.5L2 17.5L4 1Z"
-                            fill="#D4B487"
-                            stroke="#1B100A"
-                            strokeWidth="0.8"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                        <span className="arrivals-click-ring" />
-                      </span>
-                    )}
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-full h-px bg-white origin-right scale-x-0 group-hover:origin-left group-hover:scale-x-100 transition-transform duration-500" />
-                  </a>
-                );
-              })}
+              {EXTENDED_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  className="group relative text-[13px] font-sans font-medium text-white/75 hover:text-white transition-colors tracking-[0.15em] uppercase"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-full h-px bg-white origin-right scale-x-0 group-hover:origin-left group-hover:scale-x-100 transition-transform duration-500" />
+                </a>
+              ))}
             </div>
-
-            <style>{`
-              .arrivals-cursor-wrap {
-                position: absolute;
-                top: calc(100% + 6px);
-                left: 50%;
-                transform: translateX(-20%);
-                pointer-events: none;
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-              }
-
-              .arrivals-cursor {
-                filter: drop-shadow(0 2px 6px rgba(184,147,90,0.7));
-                animation: arrivals-bob 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-                transform-origin: top left;
-              }
-
-              .arrivals-click-ring {
-                position: absolute;
-                top: 2px;
-                left: 4px;
-                width: 14px;
-                height: 14px;
-                border-radius: 50%;
-                border: 1.5px solid #D4B487;
-                animation: arrivals-ring 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-                opacity: 0;
-              }
-
-              @keyframes arrivals-bob {
-                0%   { transform: translateY(0px) rotate(-10deg); }
-                40%  { transform: translateY(6px) rotate(-6deg); }
-                50%  { transform: translateY(8px) rotate(-4deg) scale(0.9); }
-                60%  { transform: translateY(6px) rotate(-6deg) scale(1); }
-                100% { transform: translateY(0px) rotate(-10deg); }
-              }
-
-              @keyframes arrivals-ring {
-                0%   { opacity: 0; transform: scale(0.5); }
-                45%  { opacity: 0; transform: scale(0.5); }
-                55%  { opacity: 0.9; transform: scale(1); }
-                80%  { opacity: 0; transform: scale(2.2); }
-                100% { opacity: 0; transform: scale(2.2); }
-              }
-
-              .arrivals-label {
-                position: relative;
-                display: inline-block;
-              }
-
-              .arrivals-glow {
-                position: absolute;
-                inset: -6px -10px;
-                border-radius: 6px;
-                background: radial-gradient(ellipse at center, rgba(184,147,90,0.18) 0%, transparent 70%);
-                animation: arrivals-pulse 1.8s ease-in-out infinite;
-                pointer-events: none;
-              }
-
-              @keyframes arrivals-pulse {
-                0%, 100% { opacity: 0.5; transform: scale(1); }
-                50%       { opacity: 1;   transform: scale(1.08); }
-              }
-            `}</style>
 
             {/* Hamburger — mobile */}
             <button
