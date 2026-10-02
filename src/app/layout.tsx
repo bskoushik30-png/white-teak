@@ -7,21 +7,19 @@ const libreBaskerville = Libre_Baskerville({
   variable: "--font-serif",
   display: "swap",
   weight: ["400", "700"],
-  style: ["normal"],
 });
 
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 const cinzel = Cinzel({
   subsets: ["latin"],
   variable: "--font-logo",
   display: "swap",
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -40,6 +38,14 @@ export default function RootLayout({
       lang="en"
       className={`${libreBaskerville.variable} ${raleway.variable} ${cinzel.variable} antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap"
+        />
+      </head>
       <body className="min-h-screen">{children}</body>
     </html>
   );
