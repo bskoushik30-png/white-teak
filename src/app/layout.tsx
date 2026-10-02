@@ -28,11 +28,12 @@ export const metadata: Metadata = {
     "Brewing coffee, Brewing Experiences. Specialty coffee, thoughtful food and spaces designed for slow moments in Mysuru.",
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "/white-teak-logo.png", type: "image/png" },
+      { url: "/icon.png?v=20261002", type: "image/png" },
+      { url: "/white-teak-emblem.png?v=20261002", type: "image/png" },
+      { url: "/favicon.ico?v=20261002" },
     ],
-    shortcut: "/icon.png",
-    apple: "/apple-icon.png",
+    shortcut: "/icon.png?v=20261002",
+    apple: "/apple-icon.png?v=20261002",
   },
 };
 
@@ -47,8 +48,9 @@ export default function RootLayout({
       className={`${libreBaskerville.variable} ${raleway.variable} ${cinzel.variable} antialiased`}
     >
       <head>
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="icon" href="/icon.png?v=20261002" type="image/png" />
+        <link rel="shortcut icon" href="/icon.png?v=20261002" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=20261002" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
