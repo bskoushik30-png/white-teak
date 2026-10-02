@@ -24,16 +24,41 @@ export async function uploadMediaImage(formData: FormData) {
     const buffer = Buffer.from(arrayBuffer);
 
     // Upload to 'site-images' bucket
-    const { data: uploadData, error: uploadError } = await supabase.storage
+    let { data: uploadData, error: uploadError } = await supabase.storage
       .from("site-images")
       .upload(cleanFileName, buffer, {
         contentType: file.type || "image/webp",
         upsert: true,
       });
 
+    // Auto-create bucket if missing
+    if (
+      uploadError &&
+      (uploadError.message?.toLowerCase().includes("bucket") ||
+        uploadError.message?.toLowerCase().includes("not found"))
+    ) {
+      try {
+        await supabase.storage.createBucket("site-images", { public: true });
+        const retry = await supabase.storage
+          .from("site-images")
+          .upload(cleanFileName, buffer, {
+            contentType: file.type || "image/webp",
+            upsert: true,
+          });
+        uploadData = retry.data;
+        uploadError = retry.error;
+      } catch (bErr) {
+        console.warn("Auto create bucket error:", bErr);
+      }
+    }
+
     if (uploadError) {
       console.error("Storage upload error:", uploadError);
       return { success: false, error: uploadError.message };
+    }
+
+    if (!uploadData) {
+      return { success: false, error: "Upload failed to return storage path." };
     }
 
     // Get public URL
@@ -43,7 +68,8 @@ export async function uploadMediaImage(formData: FormData) {
 
     return { success: true, publicUrl: urlData.publicUrl };
   } catch (err: unknown) {
-    const message = err instanceof Error ? err.message : "Failed to upload file";
+    const message =
+      err instanceof Error ? err.message : "Failed to upload file to storage.";
     console.error("Media upload error:", err);
     return { success: false, error: message };
   }

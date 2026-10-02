@@ -94,6 +94,81 @@ async function extractThumbnailFromVideo(videoFile: File): Promise<File | null> 
   });
 }
 
+/**
+ * Automatically optimizes high-res camera photos in the browser before upload.
+ * Reduces 10MB-30MB camera photos to lightweight, crisp WebP (~200KB-500KB) in milliseconds,
+ * preventing server payload timeouts and Vercel body limits.
+ */
+async function compressImageInBrowser(file: File): Promise<File> {
+  if (
+    !file.type.startsWith("image/") ||
+    file.type === "image/svg+xml" ||
+    file.type === "image/gif" ||
+    file.size < 300 * 1024
+  ) {
+    return file;
+  }
+
+  return new Promise((resolve) => {
+    try {
+      const img = new window.Image();
+      const url = URL.createObjectURL(file);
+      img.src = url;
+
+      img.onload = () => {
+        URL.revokeObjectURL(url);
+        const maxDimension = 2000;
+        let { width, height } = img;
+
+        if (width > maxDimension || height > maxDimension) {
+          if (width > height) {
+            height = Math.round((height * maxDimension) / width);
+            width = maxDimension;
+          } else {
+            width = Math.round((width * maxDimension) / height);
+            height = maxDimension;
+          }
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+          resolve(file);
+          return;
+        }
+
+        ctx.drawImage(img, 0, 0, width, height);
+        canvas.toBlob(
+          (blob) => {
+            if (blob && blob.size < file.size) {
+              const cleanBaseName = file.name.replace(/\.[^/.]+$/, "");
+              const compressedFile = new File(
+                [blob],
+                `${cleanBaseName}_opt.webp`,
+                { type: "image/webp" }
+              );
+              resolve(compressedFile);
+            } else {
+              resolve(file);
+            }
+          },
+          "image/webp",
+          0.88
+        );
+      };
+
+      img.onerror = () => {
+        URL.revokeObjectURL(url);
+        resolve(file);
+      };
+    } catch {
+      resolve(file);
+    }
+  });
+}
+
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passcode, setPasscode] = useState("");
@@ -428,64 +503,120 @@ export default function AdminPage() {
       /\.(mp4|mov|webm|m4v|avi)$/i.test(file.name);
 
     setUploadingKey(itemKey);
-    setUploadStatusText(
-      isVideo
-        ? "Uploading video & auto-capturing cover frame..."
-        : "Uploading image to Supabase..."
-    );
 
     try {
-      if (isVideo || isDedicatedVideoUpload) {
-        // 1. Upload Video File
-        const videoFormData = new FormData();
-        videoFormData.append("file", file);
-        videoFormData.append("sectionKey", sectionKey);
+      let uploadFile = file;
 
-        const videoRes = await uploadMediaImage(videoFormData);
-        if (!videoRes.success || !videoRes.publicUrl) {
-          alert(videoRes.error || "Failed to upload video.");
-          return;
+      // 1. In-browser client image compression for large photos
+      if (!isVideo && file.type.startsWith("image/")) {
+        setUploadStatusText("Optimizing image for fast upload...");
+        uploadFile = await compressImageInBrowser(file);
+      }
+
+      setUploadStatusText(
+        isVideo
+          ? "Uploading video & auto-capturing cover frame..."
+          : "Uploading to Supabase Storage..."
+      );
+
+      let publicUrl: string | null = null;
+      let uploadErrorMessage: string | null = null;
+
+      // 2. Try Direct Client Upload to Supabase Storage (fastest, bypasses server body limits)
+      try {
+        const supabase = createClient();
+        const ext =
+          uploadFile.name.split(".").pop() || (isVideo ? "mp4" : "webp");
+        const cleanFileName = `${sectionKey}/${Date.now()}-${Math.random()
+          .toString(36)
+          .substring(2, 8)}.${ext}`;
+
+        const { data: uploadData, error: uploadErr } = await supabase.storage
+          .from("site-images")
+          .upload(cleanFileName, uploadFile, {
+            contentType:
+              uploadFile.type || (isVideo ? "video/mp4" : "image/webp"),
+            upsert: true,
+          });
+
+        if (!uploadErr && uploadData) {
+          const { data: urlData } = supabase.storage
+            .from("site-images")
+            .getPublicUrl(uploadData.path);
+          publicUrl = urlData.publicUrl;
+        } else if (uploadErr) {
+          console.warn("Direct client storage upload notice:", uploadErr);
+          uploadErrorMessage = uploadErr.message;
         }
+      } catch (clientErr) {
+        console.warn("Direct client upload exception:", clientErr);
+      }
 
+      // 3. Fallback to Server Action if client-side upload didn't return URL
+      if (!publicUrl) {
+        setUploadStatusText("Uploading via secure server action...");
+        const formData = new FormData();
+        formData.append("file", uploadFile);
+        formData.append("sectionKey", sectionKey);
+
+        const serverRes = await uploadMediaImage(formData);
+        if (serverRes.success && serverRes.publicUrl) {
+          publicUrl = serverRes.publicUrl;
+        } else {
+          throw new Error(
+            serverRes.error ||
+              uploadErrorMessage ||
+              "Failed to upload to storage. Check Supabase connection."
+          );
+        }
+      }
+
+      if (isVideo || isDedicatedVideoUpload) {
         // Set video URL in metadata
-        handleMetaChange(sectionKey, itemKey, "videoUrl", videoRes.publicUrl);
+        handleMetaChange(sectionKey, itemKey, "videoUrl", publicUrl);
         handleMetaChange(sectionKey, itemKey, "mediaType", "VIDEO");
 
-        // 2. Automatically Extract Cover Frame from Video if not custom-set
+        // Automatically Extract Cover Frame from Video if not custom-set
         setUploadStatusText("Auto-extracting cover thumbnail from video...");
         const thumbFile = await extractThumbnailFromVideo(file);
 
         if (thumbFile) {
+          const thumbCompressed = await compressImageInBrowser(thumbFile);
           const thumbFormData = new FormData();
-          thumbFormData.append("file", thumbFile);
+          thumbFormData.append("file", thumbCompressed);
           thumbFormData.append("sectionKey", `${sectionKey}/thumbs`);
 
           const thumbRes = await uploadMediaImage(thumbFormData);
           if (thumbRes.success && thumbRes.publicUrl) {
-            handleFieldChange(sectionKey, itemKey, "image_url", thumbRes.publicUrl);
+            handleFieldChange(
+              sectionKey,
+              itemKey,
+              "image_url",
+              thumbRes.publicUrl
+            );
           }
         }
 
-        showToast("🎬 Video uploaded & cover photo auto-captured from video! Click 'Save Changes'.");
+        showToast(
+          "🎬 Video uploaded & cover photo auto-captured! Click 'Save Changes'."
+        );
       } else {
-        // Standard Image Upload (or custom cover photo override)
-        const imageFormData = new FormData();
-        imageFormData.append("file", file);
-        imageFormData.append("sectionKey", sectionKey);
-
-        const imageRes = await uploadMediaImage(imageFormData);
-        if (imageRes.success && imageRes.publicUrl) {
-          handleFieldChange(sectionKey, itemKey, "image_url", imageRes.publicUrl);
-          showToast("🖼️ Custom cover photo uploaded! Click 'Save Changes' to apply.");
-        } else {
-          alert(imageRes.error || "Upload failed.");
-        }
+        handleFieldChange(sectionKey, itemKey, "image_url", publicUrl);
+        showToast(
+          "🖼️ Photo uploaded successfully! Click 'Save Changes' to apply."
+        );
       }
-    } catch (err) {
-      console.error(err);
-      alert("Error uploading file");
+    } catch (err: unknown) {
+      console.error("Upload error details:", err);
+      const msg =
+        err instanceof Error
+          ? err.message
+          : "Network error or storage upload failure.";
+      alert(`Upload failed: ${msg}`);
     } finally {
       setUploadingKey(null);
+      // Reset input value so user can re-select if needed
+      e.target.value = "";
     }
   };
 
