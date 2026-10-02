@@ -266,7 +266,7 @@ export default function AdminPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (passcode === "whiteteak2026" || passcode === "admin") {
+    if (passcode === "wt@26") {
       setIsAuthenticated(true);
       localStorage.setItem("wt_admin_auth", "true");
       setPasscodeError(false);
