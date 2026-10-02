@@ -4,7 +4,8 @@ import ArrivalsSection from "@/components/ArrivalsSection";
 import Footer from "@/components/Footer";
 import { getSectionMedia } from "@/lib/supabase/media";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "New Arrivals — The Summer Affair | White Teak Coffee Roasters",

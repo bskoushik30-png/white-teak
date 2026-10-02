@@ -36,19 +36,32 @@ export async function getAllSectionMedia(): Promise<Record<string, SectionMediaI
     }
 
     const grouped: Record<string, SectionMediaItem[]> = { ...DEFAULT_SECTION_MEDIA };
+
+    // If database contains custom reels or locations, use database records directly
+    const dbSections = new Set(data.map((d) => d.section_key));
+    if (dbSections.has("reels")) {
+      grouped.reels = [];
+    }
+    if (dbSections.has("locations")) {
+      grouped.locations = [];
+    }
     
     // Group fetched records by section_key
     data.forEach((item: SectionMediaItem) => {
       if (!grouped[item.section_key]) {
         grouped[item.section_key] = [];
       }
-      const existingIdx = grouped[item.section_key].findIndex(
-        (x) => x.item_key === item.item_key
-      );
-      if (existingIdx >= 0) {
-        grouped[item.section_key][existingIdx] = item;
-      } else {
+      if (item.section_key === "reels" || item.section_key === "locations") {
         grouped[item.section_key].push(item);
+      } else {
+        const existingIdx = grouped[item.section_key].findIndex(
+          (x) => x.item_key === item.item_key
+        );
+        if (existingIdx >= 0) {
+          grouped[item.section_key][existingIdx] = item;
+        } else {
+          grouped[item.section_key].push(item);
+        }
       }
     });
 

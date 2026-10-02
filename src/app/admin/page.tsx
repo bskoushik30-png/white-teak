@@ -216,12 +216,16 @@ export default function AdminPage() {
             ...DEFAULT_SECTION_MEDIA,
             reels: [],
           };
+          const dbSections = new Set(data.map((d) => d.section_key));
+          if (dbSections.has("locations")) {
+            merged.locations = [];
+          }
           data.forEach((item: SectionMediaItem) => {
             if (!merged[item.section_key]) {
               merged[item.section_key] = [];
             }
-            if (item.section_key === "reels") {
-              merged.reels.push(item);
+            if (item.section_key === "reels" || item.section_key === "locations") {
+              merged[item.section_key].push(item);
             } else {
               const idx = merged[item.section_key].findIndex(
                 (x) => x.item_key === item.item_key
@@ -455,28 +459,38 @@ export default function AdminPage() {
     try {
       const res = await fetchInstagramReelMetadata(reelUrl);
       if (res.success && res.imageUrl) {
+        const reelsList = [...(mediaData.reels || [])];
+        const cur = reelsList.find((x) => x.item_key === itemKey);
+        const curMeta = (cur?.metadata || {}) as Record<string, unknown>;
+
+        const updatedReel: SectionMediaItem = {
+          section_key: "reels",
+          item_key: itemKey,
+          image_url: res.imageUrl,
+          title: res.title || cur?.title || "",
+          subtitle: res.caption || cur?.subtitle || "",
+          display_order: cur?.display_order ?? 0,
+          metadata: {
+            ...curMeta,
+            permalink: res.permalink,
+            likeCount: res.likeCount,
+          },
+        };
+
         setMediaData((prev) => {
-          const reelsList = [...(prev.reels || [])];
-          const idx = reelsList.findIndex((x) => x.item_key === itemKey);
+          const list = [...(prev.reels || [])];
+          const idx = list.findIndex((x) => x.item_key === itemKey);
           if (idx >= 0) {
-            const cur = reelsList[idx];
-            const curMeta = (cur.metadata || {}) as Record<string, unknown>;
-            reelsList[idx] = {
-              ...cur,
-              image_url: res.imageUrl,
-              title: res.title || cur.title || "",
-              subtitle: res.caption || cur.subtitle || "",
-              metadata: {
-                ...curMeta,
-                permalink: res.permalink,
-                likeCount: res.likeCount,
-              },
-            };
+            list[idx] = updatedReel;
+          } else {
+            list.push(updatedReel);
           }
-          return { ...prev, reels: reelsList };
+          return { ...prev, reels: list };
         });
 
-        showToast("✨ Cover photo, caption & likes fetched from Instagram! Click 'Save Changes'.");
+        // Auto-save immediately to Supabase database
+        await upsertMediaItem(updatedReel);
+        showToast("✨ Cover photo, caption & likes fetched and saved live to website!");
       } else {
         alert(res.error || "Could not automatically fetch details from Instagram link.");
       }
@@ -571,12 +585,26 @@ export default function AdminPage() {
         }
       }
 
-      if (isVideo || isDedicatedVideoUpload) {
-        // Set video URL in metadata
-        handleMetaChange(sectionKey, itemKey, "videoUrl", publicUrl);
-        handleMetaChange(sectionKey, itemKey, "mediaType", "VIDEO");
+      // 4. Prepare updated item and auto-save directly to Supabase
+      const currentList = mediaData[sectionKey] || [];
+      const curItem = currentList.find((x) => x.item_key === itemKey);
 
-        // Automatically Extract Cover Frame from Video if not custom-set
+      let updatedItem: SectionMediaItem = {
+        section_key: sectionKey,
+        item_key: itemKey,
+        title: curItem?.title || "",
+        subtitle: curItem?.subtitle || "",
+        image_url: publicUrl,
+        alt_text: curItem?.alt_text || curItem?.title || "",
+        display_order: curItem?.display_order ?? 0,
+        metadata: curItem?.metadata || {},
+      };
+
+      if (isVideo || isDedicatedVideoUpload) {
+        const currentMeta = (curItem?.metadata || {}) as Record<string, unknown>;
+        let thumbUrl = curItem?.image_url || publicUrl;
+
+        // Auto-extract Cover Frame from Video
         setUploadStatusText("Auto-extracting cover thumbnail from video...");
         const thumbFile = await extractThumbnailFromVideo(file);
 
@@ -588,23 +616,44 @@ export default function AdminPage() {
 
           const thumbRes = await uploadMediaImage(thumbFormData);
           if (thumbRes.success && thumbRes.publicUrl) {
-            handleFieldChange(
-              sectionKey,
-              itemKey,
-              "image_url",
-              thumbRes.publicUrl
-            );
+            thumbUrl = thumbRes.publicUrl;
           }
         }
 
+        updatedItem = {
+          ...updatedItem,
+          image_url: thumbUrl,
+          metadata: {
+            ...currentMeta,
+            videoUrl: publicUrl,
+            mediaType: "VIDEO",
+          },
+        };
+      }
+
+      // Update in-memory state
+      setMediaData((prev) => {
+        const list = [...(prev[sectionKey] || [])];
+        const idx = list.findIndex((x) => x.item_key === itemKey);
+        if (idx >= 0) {
+          list[idx] = updatedItem;
+        } else {
+          list.push(updatedItem);
+        }
+        return { ...prev, [sectionKey]: list };
+      });
+
+      // 5. Auto-save live to Supabase DB immediately
+      setUploadStatusText("Saving live to website database...");
+      const saveRes = await upsertMediaItem(updatedItem);
+      if (saveRes.success) {
         showToast(
-          "🎬 Video uploaded & cover photo auto-captured! Click 'Save Changes'."
+          isVideo
+            ? "🎬 Video uploaded & saved live to website!"
+            : "🖼️ Photo uploaded & saved live to website!"
         );
       } else {
-        handleFieldChange(sectionKey, itemKey, "image_url", publicUrl);
-        showToast(
-          "🖼️ Photo uploaded successfully! Click 'Save Changes' to apply."
-        );
+        showToast("⚠️ Photo uploaded. Click 'Save Changes' to retry saving to database.");
       }
     } catch (err: unknown) {
       console.error("Upload error details:", err);

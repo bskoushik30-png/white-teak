@@ -102,8 +102,12 @@ export async function upsertMediaItem(item: SectionMediaItem) {
       return { success: false, error: error.message };
     }
 
-    revalidatePath("/");
-    revalidatePath("/admin");
+    revalidatePath("/", "layout");
+    revalidatePath("/", "page");
+    revalidatePath("/admin", "layout");
+    revalidatePath("/admin", "page");
+    revalidatePath("/arrivals", "layout");
+    revalidatePath("/arrivals", "page");
     return { success: true, data: data?.[0] };
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Failed to update item";
@@ -124,8 +128,10 @@ export async function deleteAllReels() {
       return { success: false, error: error.message };
     }
 
-    revalidatePath("/");
-    revalidatePath("/admin");
+    revalidatePath("/", "layout");
+    revalidatePath("/", "page");
+    revalidatePath("/admin", "layout");
+    revalidatePath("/admin", "page");
     return { success: true };
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Failed to delete all reels";
@@ -146,8 +152,12 @@ export async function deleteMediaItem(sectionKey: string, itemKey: string) {
       return { success: false, error: error.message };
     }
 
-    revalidatePath("/");
-    revalidatePath("/admin");
+    revalidatePath("/", "layout");
+    revalidatePath("/", "page");
+    revalidatePath("/admin", "layout");
+    revalidatePath("/admin", "page");
+    revalidatePath("/arrivals", "layout");
+    revalidatePath("/arrivals", "page");
     return { success: true };
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Failed to delete item";

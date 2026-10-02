@@ -15,8 +15,9 @@ import SmoothScroll from "@/components/SmoothScroll";
 import { getAllSectionMedia } from "@/lib/supabase/media";
 import { getInstagramReels } from "@/lib/instagram";
 
-// Revalidate every 60s or on-demand via server action
-export const revalidate = 60;
+// Live dynamic rendering for immediate reflection of Supabase admin edits
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function Home() {
   const [media, reels] = await Promise.all([
