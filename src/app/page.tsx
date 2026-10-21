@@ -41,7 +41,7 @@ export default async function Home() {
         <GoogleReviews />
         <LocationsSection media={media.locations} />
         <NewsletterSection />
-        <Footer />
+        <Footer media={media.footer} locations={media.locations} />
       </main>
     </>
   );

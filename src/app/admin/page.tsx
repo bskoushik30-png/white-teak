@@ -17,6 +17,7 @@ import {
   getInquiriesList,
 } from "@/app/actions/media";
 import { createClient } from "@/lib/supabase/client";
+import FooterAdminSection from "@/app/admin/FooterAdminSection";
 
 const SECTIONS = [
   { key: "hero", label: "Hero Banner", icon: "✨", count: 1 },
@@ -29,6 +30,7 @@ const SECTIONS = [
   { key: "categories", label: "Categories", icon: "🗂️", count: 5 },
   { key: "locations", label: "Locations", icon: "📍", count: null },
   { key: "reels", label: "Instagram Reels", icon: "🎬", count: null },
+  { key: "footer", label: "Footer & Contact", icon: "🦶", count: 5 },
   { key: "leads", label: "Leads & Subscribers", icon: "📬", count: null },
 ];
 
@@ -197,6 +199,13 @@ export default function AdminPage() {
     if (savedAuth === "true") {
       setIsAuthenticated(true);
     }
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get("tab");
+      if (tabParam && SECTIONS.some((s) => s.key === tabParam)) {
+        setActiveTab(tabParam);
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -287,10 +296,21 @@ export default function AdminPage() {
     value: string | number
   ) => {
     setMediaData((prev) => {
-      const list = [...(prev[sectionKey] || [])];
+      const list = [...(prev[sectionKey] || DEFAULT_SECTION_MEDIA[sectionKey] || [])];
       const idx = list.findIndex((x) => x.item_key === itemKey);
       if (idx >= 0) {
         list[idx] = { ...list[idx], [field]: value };
+      } else {
+        const def = (DEFAULT_SECTION_MEDIA[sectionKey] || []).find((x) => x.item_key === itemKey);
+        const base = def || {
+          section_key: sectionKey,
+          item_key: itemKey,
+          title: "",
+          subtitle: "",
+          image_url: "",
+          display_order: 0,
+        };
+        list.push({ ...base, [field]: value });
       }
       return { ...prev, [sectionKey]: list };
     });
@@ -303,7 +323,7 @@ export default function AdminPage() {
     value: string | boolean
   ) => {
     setMediaData((prev) => {
-      const list = [...(prev[sectionKey] || [])];
+      const list = [...(prev[sectionKey] || DEFAULT_SECTION_MEDIA[sectionKey] || [])];
       const idx = list.findIndex((x) => x.item_key === itemKey);
       if (idx >= 0) {
         const currentMeta = (list[idx].metadata || {}) as Record<string, unknown>;
@@ -311,9 +331,42 @@ export default function AdminPage() {
           ...list[idx],
           metadata: { ...currentMeta, [metaKey]: value },
         };
+      } else {
+        const def = (DEFAULT_SECTION_MEDIA[sectionKey] || []).find((x) => x.item_key === itemKey);
+        const base = def || {
+          section_key: sectionKey,
+          item_key: itemKey,
+          title: "",
+          subtitle: "",
+          image_url: "",
+          display_order: 0,
+          metadata: {},
+        };
+        list.push({
+          ...base,
+          metadata: { ...(base.metadata || {}), [metaKey]: value },
+        });
       }
       return { ...prev, [sectionKey]: list };
     });
+  };
+
+  const handleSaveAllFooter = async () => {
+    const footerList = mediaData.footer || DEFAULT_SECTION_MEDIA.footer || [];
+    setSavingKey("all_footer");
+    try {
+      let count = 0;
+      for (const item of footerList) {
+        const res = await upsertMediaItem(item);
+        if (res.success) count++;
+      }
+      showToast(`✨ Saved all ${count} Footer & Contact sections live to website!`);
+    } catch (err) {
+      console.error(err);
+      alert("Error saving footer items");
+    } finally {
+      setSavingKey(null);
+    }
   };
 
   const handleAddNewReel = () => {
@@ -978,11 +1031,23 @@ export default function AdminPage() {
                     ? "Upload reel videos (.mp4/.mov) or paste reel links. Cover thumbnail is auto-fetched or captured!"
                     : activeTab === "locations"
                     ? "Add and manage cafe branches, operating hours, Google Maps directions, and location photos. Changes update live immediately upon saving."
+                    : activeTab === "footer"
+                    ? "Customize brand logo, locations column heading, contact channels, delivery partners, and legal links at the bottom of the website."
                     : "Upload photos from your computer or paste image links. Changes take effect on the live website immediately upon saving."}
                 </p>
               </div>
 
               <div className="flex items-center gap-3">
+                {activeTab === "footer" && (
+                  <button
+                    onClick={handleSaveAllFooter}
+                    disabled={savingKey === "all_footer"}
+                    className="flex items-center gap-2 rounded-xl bg-[#c8d96a] px-4 py-2.5 text-xs font-semibold text-[#110b07] shadow-lg shadow-[#c8d96a]/20 hover:bg-[#d8e878] transition disabled:opacity-50"
+                  >
+                    <span>💾</span>
+                    <span>{savingKey === "all_footer" ? "Saving..." : "Save All Footer Changes"}</span>
+                  </button>
+                )}
                 {activeTab === "reels" && currentItems.length > 0 && (
                   <button
                     onClick={handleDeleteAllReels}
@@ -1021,6 +1086,22 @@ export default function AdminPage() {
                 <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-2 border-[#c8d96a] border-t-transparent" />
                 Loading section media...
               </div>
+            ) : activeTab === "footer" ? (
+              <FooterAdminSection
+                mediaData={mediaData}
+                savingKey={savingKey}
+                uploadingKey={uploadingKey}
+                uploadStatusText={uploadStatusText}
+                handleFieldChange={handleFieldChange}
+                handleMetaChange={handleMetaChange}
+                handleFileUpload={handleFileUpload}
+                handleSaveItem={handleSaveItem}
+                handleResetItem={handleResetItem}
+                handleSaveAllFooter={handleSaveAllFooter}
+                setActiveTab={setActiveTab}
+                setPreviewImage={setPreviewImage}
+                showToast={showToast}
+              />
             ) : currentItems.length === 0 ? (
               activeTab === "reels" ? (
                 <div className="rounded-2xl border border-dashed border-[#c8d96a]/30 bg-[#160e0a]/60 p-12 text-center">

@@ -5,6 +5,9 @@ import {
   FARM_IMAGES,
   FEATURE_CARDS,
   CATEGORY_LINKS,
+  CONTACT,
+  ORDER_LINKS,
+  SOCIAL_LINKS,
 } from "@/lib/constants";
 
 // Default fallback data for all sections (pure constants, safe for Client & Server)
@@ -178,4 +181,78 @@ export const DEFAULT_SECTION_MEDIA: Record<string, SectionMediaItem[]> = {
     },
   ],
   reels: [],
+  footer: [
+    {
+      section_key: "footer",
+      item_key: "footer_brand",
+      title: "White Teak Coffee Roasters",
+      subtitle: "Brewing coffee, Brewing Experiences",
+      image_url: "/white-teak-logo.png",
+      display_order: 1,
+      metadata: {
+        altText: "White Teak Coffee Roasters",
+      },
+    },
+    {
+      section_key: "footer",
+      item_key: "footer_locations_heading",
+      title: "Our Locations",
+      subtitle: "Synced with cafe branches",
+      image_url: "",
+      display_order: 2,
+      metadata: {
+        useDynamicLocations: true,
+      },
+    },
+    {
+      section_key: "footer",
+      item_key: "footer_contact",
+      title: "Contact Us",
+      subtitle: "Get in touch with us",
+      image_url: "",
+      display_order: 3,
+      metadata: {
+        whatsappLabel: "WhatsApp",
+        whatsappNumber: "+91 9731999040",
+        whatsappLink: CONTACT.whatsappLink,
+        emailLabel: "Email",
+        email: CONTACT.email,
+        instagram: SOCIAL_LINKS.instagram,
+        facebook: SOCIAL_LINKS.facebook,
+      },
+    },
+    {
+      section_key: "footer",
+      item_key: "footer_order",
+      title: "Order Now",
+      subtitle: "Dine In & Delivery",
+      image_url: "",
+      display_order: 4,
+      metadata: {
+        dineInText: "Dine In",
+        dineInLink: ORDER_LINKS.direct,
+        swiggyLink: ORDER_LINKS.swiggy,
+        swiggyImage: "/Swiggy.png",
+        zomatoLink: ORDER_LINKS.zomato,
+        zomatoImage: "/zomato2.png",
+      },
+    },
+    {
+      section_key: "footer",
+      item_key: "footer_bottom",
+      title: "White Teak Coffee Roasters",
+      subtitle: "Designed & Managed by",
+      image_url: "",
+      display_order: 5,
+      metadata: {
+        copyrightYear: "2026",
+        creditName: "LiilMedia",
+        creditUrl: "https://www.liitmedia.in",
+        privacyLabel: "Privacy Policy",
+        privacyUrl: "#",
+        termsLabel: "Terms of Service",
+        termsUrl: "#",
+      },
+    },
+  ],
 };
