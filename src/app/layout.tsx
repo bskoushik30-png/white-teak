@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "Brewing coffee, Brewing Experiences. Specialty coffee, thoughtful food and spaces designed for slow moments in Mysuru.",
   icons: {
     icon: [
-      { url: "/icon.png?v=20261026b", type: "image/png" },
-      { url: "/white-teak-emblem.png?v=20261026b", type: "image/png" },
-      { url: "/favicon.ico?v=20261026b" },
+      { url: "/icon.png?v=20261027b", type: "image/png" },
+      { url: "/white-teak-emblem.png?v=20261027b", type: "image/png" },
+      { url: "/favicon.ico?v=20261027b" },
     ],
-    shortcut: "/icon.png?v=20261026b",
-    apple: "/apple-icon.png?v=20261026b",
+    shortcut: "/icon.png?v=20261027b",
+    apple: "/apple-icon.png?v=20261027b",
   },
 };
 
@@ -48,9 +48,9 @@ export default function RootLayout({
       className={`${libreBaskerville.variable} ${raleway.variable} ${cinzel.variable} antialiased`}
     >
       <head>
-        <link rel="icon" href="/icon.png?v=20261026b" type="image/png" />
-        <link rel="shortcut icon" href="/icon.png?v=20261026b" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-icon.png?v=20261026b" />
+        <link rel="icon" href="/icon.png?v=20261027b" type="image/png" />
+        <link rel="shortcut icon" href="/icon.png?v=20261027b" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=20261027b" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
