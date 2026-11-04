@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -248,6 +248,7 @@ function BottomBar({
   privacyUrl,
   termsLabel,
   termsUrl,
+  isAdmin,
 }: {
   copyrightText: string;
   creditPrefix: string;
@@ -257,6 +258,7 @@ function BottomBar({
   privacyUrl: string;
   termsLabel: string;
   termsUrl: string;
+  isAdmin?: boolean;
 }) {
   const hasPrivacyUrl = privacyUrl && privacyUrl !== "#" && privacyUrl.trim() !== "";
   const hasTermsUrl = termsUrl && termsUrl !== "#" && termsUrl.trim() !== "";
@@ -268,14 +270,16 @@ function BottomBar({
           <p className="font-sans text-[11px] tracking-[0.06em] text-white/55">
             {copyrightText || `© ${new Date().getFullYear()} White Teak Coffee Roasters`}
           </p>
-          <a
-            href="/admin?tab=footer"
-            className="opacity-25 hover:opacity-100 transition-opacity flex items-center gap-1 font-sans text-[10px] text-[#c8d96a] border border-[#c8d96a]/20 rounded-md px-1.5 py-0.5"
-            title="Edit Footer & Contact Information in Admin"
-          >
-            <span>✏️</span>
-            <span>Edit</span>
-          </a>
+          {isAdmin && (
+            <Link
+              href="/admin?tab=footer"
+              className="opacity-50 hover:opacity-100 transition-opacity flex items-center gap-1 font-sans text-[10px] text-[#c8d96a] border border-[#c8d96a]/20 rounded-md px-1.5 py-0.5"
+              title="Edit Footer & Contact Information in Admin"
+            >
+              <span aria-hidden="true">✏️</span>
+              <span>Edit</span>
+            </Link>
+          )}
         </div>
         <p className="order-3 font-sans text-[11px] tracking-[0.06em] text-white/55 sm:order-2">
           {creditPrefix || "Designed & Managed by"}{" "}
@@ -285,7 +289,7 @@ function BottomBar({
             rel="noopener noreferrer"
             className="text-white/75 underline decoration-white/30 underline-offset-2 transition-colors duration-300 hover:text-white hover:decoration-white/60"
           >
-            {creditName || "LiilMedia"}
+            {creditName || "Liit Media"}
           </a>
         </p>
         <div className="order-1 flex items-center gap-10 sm:order-3">
@@ -330,6 +334,23 @@ interface FooterProps {
 
 export default function Footer({ media, locations }: FooterProps) {
   const root = useRef<HTMLElement>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    try {
+      const checkAdmin = () => {
+        const authed =
+          localStorage.getItem("wt_admin_auth") === "true" ||
+          document.cookie.split("; ").some((c) => c === "wt_admin_auth=true");
+        setIsAdmin(Boolean(authed));
+      };
+      checkAdmin();
+      window.addEventListener("storage", checkAdmin);
+      return () => window.removeEventListener("storage", checkAdmin);
+    } catch {
+      // In case localStorage / cookie access is restricted
+    }
+  }, []);
 
   // Extract items from media or fallback to DEFAULT_SECTION_MEDIA.footer
   const fallbackFooter = DEFAULT_SECTION_MEDIA.footer || [];
@@ -372,7 +393,13 @@ export default function Footer({ media, locations }: FooterProps) {
   const contactMeta = (contactItem?.metadata || {}) as Record<string, string>;
   const whatsappLabel = contactMeta.whatsappLabel || "WhatsApp";
   const whatsappNumber = contactMeta.whatsappNumber || "+91 9731999040";
-  const whatsappLink = contactMeta.whatsappLink || CONTACT.whatsappLink;
+  let whatsappLink = contactMeta.whatsappLink || CONTACT.whatsappLink;
+  if (!whatsappLink || whatsappLink.includes("9154990266")) {
+    const digits = whatsappNumber.replace(/\D/g, "");
+    whatsappLink = digits
+      ? `https://wa.me/${digits.startsWith("91") ? digits : `91${digits}`}`
+      : "https://wa.me/919731999040";
+  }
   const emailLabel = contactMeta.emailLabel || "Email";
   const emailAddress = contactMeta.email || CONTACT.email;
   const instagramUrl = contactMeta.instagram || SOCIAL_LINKS.instagram;
@@ -392,7 +419,10 @@ export default function Footer({ media, locations }: FooterProps) {
   const bottomMeta = (bottomItem?.metadata || {}) as Record<string, string>;
   const copyrightText = bottomItem?.title || `© ${new Date().getFullYear()} White Teak Coffee Roasters`;
   const creditPrefix = bottomItem?.subtitle || "Designed & Managed by";
-  const creditName = bottomMeta.creditName || "LiilMedia";
+  const creditName =
+    bottomMeta.creditName && bottomMeta.creditName !== "LiilMedia"
+      ? bottomMeta.creditName
+      : "Liit Media";
   const creditUrl = bottomMeta.creditUrl || "https://www.liitmedia.in";
   const privacyLabel = bottomMeta.privacyLabel || "Privacy Policy";
   const privacyUrl = bottomMeta.privacyUrl || "#";
@@ -473,6 +503,7 @@ export default function Footer({ media, locations }: FooterProps) {
           privacyUrl={privacyUrl}
           termsLabel={termsLabel}
           termsUrl={termsUrl}
+          isAdmin={isAdmin}
         />
       </div>
     </footer>

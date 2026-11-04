@@ -214,7 +214,7 @@ export const DEFAULT_SECTION_MEDIA: Record<string, SectionMediaItem[]> = {
       metadata: {
         whatsappLabel: "WhatsApp",
         whatsappNumber: "+91 9731999040",
-        whatsappLink: CONTACT.whatsappLink,
+        whatsappLink: "https://wa.me/919731999040",
         emailLabel: "Email",
         email: CONTACT.email,
         instagram: SOCIAL_LINKS.instagram,
@@ -246,7 +246,7 @@ export const DEFAULT_SECTION_MEDIA: Record<string, SectionMediaItem[]> = {
       display_order: 5,
       metadata: {
         copyrightYear: "2026",
-        creditName: "LiilMedia",
+        creditName: "Liit Media",
         creditUrl: "https://www.liitmedia.in",
         privacyLabel: "Privacy Policy",
         privacyUrl: "#",

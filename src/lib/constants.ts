@@ -45,8 +45,8 @@ export const SOCIAL_LINKS = {
 };
 
 export const CONTACT = {
-  whatsapp: "+919731999040",
-  whatsappLink: "https://wa.me/919154990266?text=",
+  whatsapp: "+91 9731999040",
+  whatsappLink: "https://wa.me/919731999040",
   email: "whiteteak.social@gmail.com",
   address:
     "D13/B, Gokulam Main Rd, Vani Vilas Mohalla, Mysuru, Karnataka 570002",

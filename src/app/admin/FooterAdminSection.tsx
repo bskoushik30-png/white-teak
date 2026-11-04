@@ -422,11 +422,15 @@ export default function FooterAdminSection({
                 </label>
                 <input
                   type="text"
-                  value={contactMeta.whatsappLink ?? "https://wa.me/919154990266?text="}
+                  value={
+                    contactMeta.whatsappLink && !contactMeta.whatsappLink.includes("9154990266")
+                      ? contactMeta.whatsappLink
+                      : "https://wa.me/919731999040"
+                  }
                   onChange={(e) =>
                     handleMetaChange("footer", "footer_contact", "whatsappLink", e.target.value)
                   }
-                  placeholder="https://wa.me/919154990266?text="
+                  placeholder="https://wa.me/919731999040"
                   className="w-full rounded-xl border border-white/10 bg-black/40 px-3 py-1.5 text-xs font-mono text-[#f3ecdf] focus:border-[#c8d96a] focus:outline-none"
                 />
               </div>
@@ -745,11 +749,15 @@ export default function FooterAdminSection({
                     </label>
                     <input
                       type="text"
-                      value={bottomMeta.creditName ?? "LiilMedia"}
+                      value={
+                        bottomMeta.creditName === "LiilMedia"
+                          ? "Liit Media"
+                          : (bottomMeta.creditName ?? "Liit Media")
+                      }
                       onChange={(e) =>
                         handleMetaChange("footer", "footer_bottom", "creditName", e.target.value)
                       }
-                      placeholder="LiilMedia"
+                      placeholder="Liit Media"
                       className="w-full rounded-xl border border-white/10 bg-black/40 px-3 py-1.5 text-xs text-[#f3ecdf] focus:border-[#c8d96a] focus:outline-none"
                     />
                   </div>

@@ -198,6 +198,9 @@ export default function AdminPage() {
     const savedAuth = localStorage.getItem("wt_admin_auth");
     if (savedAuth === "true") {
       setIsAuthenticated(true);
+      try {
+        document.cookie = "wt_admin_auth=true; path=/; max-age=2592000; SameSite=Lax";
+      } catch {}
     }
     if (typeof window !== "undefined") {
       const urlParams = new URLSearchParams(window.location.search);
@@ -278,6 +281,9 @@ export default function AdminPage() {
     if (passcode === "wt@26") {
       setIsAuthenticated(true);
       localStorage.setItem("wt_admin_auth", "true");
+      try {
+        document.cookie = "wt_admin_auth=true; path=/; max-age=2592000; SameSite=Lax";
+      } catch {}
       setPasscodeError(false);
     } else {
       setPasscodeError(true);
@@ -287,6 +293,9 @@ export default function AdminPage() {
   const handleLogout = () => {
     setIsAuthenticated(false);
     localStorage.removeItem("wt_admin_auth");
+    try {
+      document.cookie = "wt_admin_auth=; path=/; max-age=0; SameSite=Lax";
+    } catch {}
   };
 
   const handleFieldChange = (
